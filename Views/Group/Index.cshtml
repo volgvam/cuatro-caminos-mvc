@@ -1,0 +1,60 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@{
+    ViewBag.Title = "Группы";
+}
+
+
+<h2>Index</h2>
+
+
+@using (@Html.BeginForm())
+{
+@Html.DropDownList("Название_танца", "Все группы") 
+
+    <input type="submit" value="Фильтр"/>
+
+    <br/><br/>
+
+@*   <fieldset style="position:inherit">
+        <legend>Группы</legend>
+
+    @foreach (var название_танца in ViewBag.Название_танцев as IList<Названия_танцев>)
+    {
+        @Html.CheckBox(название_танца.Название_танца, new {@checked = "checked", value = "true" })    
+        @название_танца.Название_танца                         
+        <br/>
+    }
+
+    </fieldset>
+
+
+   <fieldset>
+        <legend>Sms</legend>
+
+    @foreach (var sms in ViewBag.Sms as ICollection<Название_SMS>)
+    {
+        @Html.CheckBox(sms.SMS, new { @checked = "checked", value = "true"})    
+        @sms.SMS                         
+        <br/>
+    }
+    </fieldset>
+
+   <fieldset>
+        <legend>Пол</legend>
+
+    @foreach (var sex in ViewBag.Sex as IList<Sex>)
+    {
+        @Html.CheckBox(sex.YesNo, new {value = "true"})    
+        @sex.YesNo                         
+        <br/>
+    }
+    </fieldset>
+
+*@
+    
+        
+   @Html.ActionLink("Экспорт телефонов в программу рассылки смс", "DownloadCSV", new { gruppa = ViewBag.FormGruppa }) <br/><br/>
+   @Html.ActionLink("Экспорт телефонов в Google", "DownloadForGoogleCSV")
+
+    
+}

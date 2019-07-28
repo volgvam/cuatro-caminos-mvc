@@ -1,0 +1,38 @@
+﻿
+@{
+    SelectList selectList = ViewBag.selectList ?? new SelectList("");
+    String middleName = ViewBag.MiddleName != null ? ViewBag.MiddleName.ToString() : "";
+    String id = ViewBag.IdPeople != null ? ViewBag.IdPeople.ToString() : "";
+    
+}
+
+<style>
+	.ui-autocomplete-loading { background: white url('/Content/themes/base/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+</style>
+	<script>
+	    $(function () {
+
+	        $("#middleName").autocomplete({
+	            source: "@Url.Action("searchJsonPeopleMiddleName", "Service")",
+	            minLength: 2,
+	            change : function (event, ui) {
+	                $(".peoplemiddlename").val(ui.item ? ui.item.value : this.value);
+	            }
+	        });
+	    });
+	</script>
+
+
+
+
+@*	@:помощь в поиске ФИО 
+*@
+    <input id="middleName" value='@middleName'  class="text-box single-line"/>  
+    @Html.TextBox("", @middleName, new { @class = "peoplemiddlename", style = "width: 1px; visibility:hidden"  })
+
+    
+
+
+
+@*        @Html.DropDownList("", selectList, "", new { @class = "peopleid", style = "width: 200px; visibility:hidden" })
+*@

@@ -1,0 +1,69 @@
+﻿@using CuatroCaminosMvcApplication
+@model CuatroCaminosMvcApplication.Models.Оплата
+
+@{
+    ViewBag.Title = "Удаление оплаты";
+    DateTime dateTime = DateTime.Now;
+
+}
+
+<h2>Удаление оплаты</h2>
+
+<h3>Вы уверены, что хотите безвовратно удалить эту запись?</h3>
+<fieldset>
+    <legend>Оплата</legend>
+
+    <div class="display-label">Дата оплаты</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Дата_оплаты)
+    </div>
+
+    <div class="display-label">ФИО</div>
+    <div class="display-field">
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Фамилия) 
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Имя) 
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Отчество)
+    </div>
+
+
+    <div class="display-label">Сумма, руб.</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Сумма)
+    </div>
+
+    <div class="display-label">Примечание</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Примечание)
+    </div>
+
+    <div class="display-label">Преподаватель</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Имена_преподавателей.ФИО)
+    </div>
+
+    <div class="display-label">Название группы</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Названия_танцев.Название_танца)
+    </div>
+</fieldset>
+
+@{
+    dateTime = Model.DateTimeRec?? DateTime.Now.AddDays(111);
+}
+
+
+@using (Html.BeginForm()) {
+    <p>
+        @if (dateTime.Date == DateTime.Now.Date || HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+        {
+            @:<input type="submit" value="Удалить" /> |
+        }else
+        {
+            <ul>
+                <h5>Вы не можете удалять оплату "задним числом"</h5>
+            </ul>
+        } 
+
+        @Html.ActionLink("Вернуться в список", "Index")
+    </p>
+}

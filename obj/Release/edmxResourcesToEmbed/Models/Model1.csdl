@@ -1,0 +1,870 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Cuatro_Caminos_BDModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Cuatro_Caminos_BDEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Cuatro_Caminos_BDModel.Administrators" />
+    <EntitySet Name="Cash" EntityType="Cuatro_Caminos_BDModel.Cash" />
+    <EntitySet Name="CashCategory" EntityType="Cuatro_Caminos_BDModel.CashCategory" />
+    <EntitySet Name="Notes" EntityType="Cuatro_Caminos_BDModel.Notes" />
+    <EntitySet Name="NotesCategory" EntityType="Cuatro_Caminos_BDModel.NotesCategory" />
+    <EntitySet Name="Price" EntityType="Cuatro_Caminos_BDModel.Price" />
+    <EntitySet Name="PriceHistory" EntityType="Cuatro_Caminos_BDModel.PriceHistory" />
+    <EntitySet Name="Visits" EntityType="Cuatro_Caminos_BDModel.Visits" />
+    <EntitySet Name="Выступления" EntityType="Cuatro_Caminos_BDModel.Выступления" />
+    <EntitySet Name="Имена_преподавателей" EntityType="Cuatro_Caminos_BDModel.Имена_преподавателей" />
+    <EntitySet Name="Календарь_занятий" EntityType="Cuatro_Caminos_BDModel.Календарь_занятий" />
+    <EntitySet Name="Контактные_лица" EntityType="Cuatro_Caminos_BDModel.Контактные_лица" />
+    <EntitySet Name="Контакты" EntityType="Cuatro_Caminos_BDModel.Контакты" />
+    <EntitySet Name="Мероприятия" EntityType="Cuatro_Caminos_BDModel.Мероприятия" />
+    <EntitySet Name="Название_SMS" EntityType="Cuatro_Caminos_BDModel.Название_SMS" />
+    <EntitySet Name="Название_мероприятий" EntityType="Cuatro_Caminos_BDModel.Название_мероприятий" />
+    <EntitySet Name="Название_месяцев" EntityType="Cuatro_Caminos_BDModel.Название_месяцев" />
+    <EntitySet Name="Название_напитков" EntityType="Cuatro_Caminos_BDModel.Название_напитков" />
+    <EntitySet Name="Название_района" EntityType="Cuatro_Caminos_BDModel.Название_района" />
+    <EntitySet Name="Название_школ" EntityType="Cuatro_Caminos_BDModel.Название_школ" />
+    <EntitySet Name="Названия_танцев" EntityType="Cuatro_Caminos_BDModel.Названия_танцев" />
+    <EntitySet Name="Наличие_авто" EntityType="Cuatro_Caminos_BDModel.Наличие_авто" />
+    <EntitySet Name="Оплата" EntityType="Cuatro_Caminos_BDModel.Оплата" />
+    <EntitySet Name="Организации" EntityType="Cuatro_Caminos_BDModel.Организации" />
+    <EntitySet Name="Списки_людей" EntityType="Cuatro_Caminos_BDModel.Списки_людей" />
+    <EntitySet Name="Список_дат" EntityType="Cuatro_Caminos_BDModel.Список_дат" />
+    <EntitySet Name="Список_лет" EntityType="Cuatro_Caminos_BDModel.Список_лет" />
+    <EntitySet Name="Список_месяцев" EntityType="Cuatro_Caminos_BDModel.Список_месяцев" />
+    <EntitySet Name="СписокНаМероприятие" EntityType="Cuatro_Caminos_BDModel.СписокНаМероприятие" />
+    <EntitySet Name="ТБ_Домики" EntityType="Cuatro_Caminos_BDModel.ТБ_Домики" />
+    <EntitySet Name="Цены" EntityType="Cuatro_Caminos_BDModel.Цены" />
+    <AssociationSet Name="FK_Administrators_Названия_танцев" Association="Cuatro_Caminos_BDModel.FK_Administrators_Названия_танцев">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Administrators_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_Administrators_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_CashCategory" Association="Cuatro_Caminos_BDModel.FK_Cash_CashCategory">
+      <End Role="CashCategory" EntitySet="CashCategory" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_Названия_танцев" Association="Cuatro_Caminos_BDModel.FK_Cash_Названия_танцев">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_Cash_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CashCategory_CashCategory" Association="Cuatro_Caminos_BDModel.FK_CashCategory_CashCategory">
+      <End Role="CashCategory" EntitySet="CashCategory" />
+      <End Role="CashCategory1" EntitySet="CashCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_NotesCategory" Association="Cuatro_Caminos_BDModel.FK_Notes_NotesCategory">
+      <End Role="NotesCategory" EntitySet="NotesCategory" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_Notes_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotesCategory_NotesCategory1" Association="Cuatro_Caminos_BDModel.FK_NotesCategory_NotesCategory1">
+      <End Role="NotesCategory" EntitySet="NotesCategory" />
+      <End Role="NotesCategory1" EntitySet="NotesCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceHistory_Price" Association="Cuatro_Caminos_BDModel.FK_PriceHistory_Price">
+      <End Role="Price" EntitySet="Price" />
+      <End Role="PriceHistory" EntitySet="PriceHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceHistory_Названия_танцев" Association="Cuatro_Caminos_BDModel.FK_PriceHistory_Названия_танцев">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="PriceHistory" EntitySet="PriceHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Названия_танцев" Association="Cuatro_Caminos_BDModel.FK_Visits_Названия_танцев">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_Visits_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Имена_Преподавателей" Association="Cuatro_Caminos_BDModel.FK_Имена_Преподавателей">
+      <End Role="Имена_преподавателей" EntitySet="Имена_преподавателей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Календарь_занятий_Названия_танцев" Association="Cuatro_Caminos_BDModel.FK_Календарь_занятий_Названия_танцев">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="Календарь_занятий" EntitySet="Календарь_занятий" />
+    </AssociationSet>
+    <AssociationSet Name="Контактные_лица_FK00" Association="Cuatro_Caminos_BDModel.Контактные_лица_FK00">
+      <End Role="Организации" EntitySet="Организации" />
+      <End Role="Контактные_лица" EntitySet="Контактные_лица" />
+    </AssociationSet>
+    <AssociationSet Name="Мероприятия_FK01" Association="Cuatro_Caminos_BDModel.Мероприятия_FK01">
+      <End Role="Наличие_авто" EntitySet="Наличие_авто" />
+      <End Role="Мероприятия" EntitySet="Мероприятия" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sms" Association="Cuatro_Caminos_BDModel.FK_Sms">
+      <End Role="Название_SMS" EntitySet="Название_SMS" />
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокНаМероприятие_Название_мероприятий" Association="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Название_мероприятий">
+      <End Role="Название_мероприятий" EntitySet="Название_мероприятий" />
+      <End Role="СписокНаМероприятие" EntitySet="СписокНаМероприятие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Название_месяцев" Association="Cuatro_Caminos_BDModel.FK_Название_месяцев">
+      <End Role="Название_месяцев" EntitySet="Название_месяцев" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK03_Районы" Association="Cuatro_Caminos_BDModel.FK03_Районы">
+      <End Role="Название_района" EntitySet="Название_района" />
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+    </AssociationSet>
+    <AssociationSet Name="FK04_Школы" Association="Cuatro_Caminos_BDModel.FK04_Школы">
+      <End Role="Название_школ" EntitySet="Название_школ" />
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Название_танцев_Оплата" Association="Cuatro_Caminos_BDModel.FK_Название_танцев_Оплата">
+      <End Role="Названия_танцев" EntitySet="Названия_танцев" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Оплата_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Оплата_Списки_людей_Login" Association="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей_Login">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="Цены_FK00" Association="Cuatro_Caminos_BDModel.Цены_FK00">
+      <End Role="Организации" EntitySet="Организации" />
+      <End Role="Цены" EntitySet="Цены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокНаМероприятие_Списки_людей" Association="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Списки_людей">
+      <End Role="Списки_людей" EntitySet="Списки_людей" />
+      <End Role="СписокНаМероприятие" EntitySet="СписокНаМероприятие" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Код_Ученика" Nullable="false" />
+    <Property Type="Int32" Name="Название_танца" Nullable="false" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_Administrators_Названия_танцев" FromRole="Administrators" ToRole="Названия_танцев" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Administrators_Списки_людей" FromRole="Administrators" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Cash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="DataTimeCreate" Nullable="false" />
+    <Property Type="DateTime" Name="DataTimePay" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" Nullable="false" />
+    <Property Type="Int32" Name="PeopleId" Nullable="false" />
+    <Property Type="Int32" Name="Money" Nullable="false" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LoginRecId" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="Boolean" Name="Payment_expenses" Nullable="false" />
+    <NavigationProperty Name="CashCategory" Relationship="Cuatro_Caminos_BDModel.FK_Cash_CashCategory" FromRole="Cash" ToRole="CashCategory" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_Cash_Названия_танцев" FromRole="Cash" ToRole="Названия_танцев" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Cash_Списки_людей" FromRole="Cash" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="CashCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cash" Relationship="Cuatro_Caminos_BDModel.FK_Cash_CashCategory" FromRole="CashCategory" ToRole="Cash" />
+    <NavigationProperty Name="CashCategory1" Relationship="Cuatro_Caminos_BDModel.FK_CashCategory_CashCategory" FromRole="CashCategory" ToRole="CashCategory1" />
+    <NavigationProperty Name="CashCategory2" Relationship="Cuatro_Caminos_BDModel.FK_CashCategory_CashCategory" FromRole="CashCategory1" ToRole="CashCategory" />
+  </EntityType>
+  <EntityType Name="Notes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="КодУченика" Nullable="false" />
+    <Property Type="DateTime" Name="DataCreate" Nullable="false" />
+    <Property Type="DateTime" Name="DatePlan" />
+    <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IdCategoryNotes" Nullable="false" />
+    <Property Type="Int32" Name="LoginRecId" Nullable="false" />
+    <NavigationProperty Name="NotesCategory" Relationship="Cuatro_Caminos_BDModel.FK_Notes_NotesCategory" FromRole="Notes" ToRole="NotesCategory" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Notes_Списки_людей" FromRole="Notes" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="NotesCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Notes" Relationship="Cuatro_Caminos_BDModel.FK_Notes_NotesCategory" FromRole="NotesCategory" ToRole="Notes" />
+    <NavigationProperty Name="NotesCategory1" Relationship="Cuatro_Caminos_BDModel.FK_NotesCategory_NotesCategory1" FromRole="NotesCategory" ToRole="NotesCategory1" />
+    <NavigationProperty Name="NotesCategory2" Relationship="Cuatro_Caminos_BDModel.FK_NotesCategory_NotesCategory1" FromRole="NotesCategory1" ToRole="NotesCategory" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Date" />
+    <Property Type="Int32" Name="Single" Nullable="false" />
+    <Property Type="Int32" Name="Subscription_8" Nullable="false" />
+    <Property Type="Int32" Name="Subscription_4" />
+    <Property Type="Int32" Name="Subscription_16" />
+    <Property Type="Int32" Name="Subscription_36" />
+    <Property Type="DateTime" Name="DateTimeRec" Nullable="false" />
+    <Property Type="Int32" Name="LoginRec" Nullable="false" />
+    <NavigationProperty Name="PriceHistory" Relationship="Cuatro_Caminos_BDModel.FK_PriceHistory_Price" FromRole="Price" ToRole="PriceHistory" />
+  </EntityType>
+  <EntityType Name="PriceHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" Nullable="false" />
+    <Property Type="Int32" Name="PriceId" Nullable="false" />
+    <Property Type="Int32" Name="LoginRec" Nullable="false" />
+    <Property Type="DateTime" Name="DateTimeRec" Nullable="false" />
+    <NavigationProperty Name="Price" Relationship="Cuatro_Caminos_BDModel.FK_PriceHistory_Price" FromRole="PriceHistory" ToRole="Price" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_PriceHistory_Названия_танцев" FromRole="PriceHistory" ToRole="Названия_танцев" />
+  </EntityType>
+  <EntityType Name="Visits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="DataTimeRec" Nullable="false" />
+    <Property Type="DateTime" Name="DataTimePay" Nullable="false" />
+    <Property Type="Int32" Name="PeopleId" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" Nullable="false" />
+    <Property Type="Int32" Name="Value" Nullable="false" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LoginRecId" Nullable="false" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_Visits_Названия_танцев" FromRole="Visits" ToRole="Названия_танцев" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Visits_Списки_людей" FromRole="Visits" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Выступления">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Дата" Nullable="false" />
+    <Property Type="Int32" Name="ФИО" Nullable="false" />
+    <Property Type="Int32" Name="Название_мероприятия" Nullable="false" />
+    <Property Type="Boolean" Name="Идет" Nullable="false" />
+    <Property Type="Int32" Name="Транспорт" />
+    <Property Type="String" Name="Примечание" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Имена_преподавателей">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ФИО" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Visible" />
+    <NavigationProperty Name="Оплата" Relationship="Cuatro_Caminos_BDModel.FK_Имена_Преподавателей" FromRole="Имена_преподавателей" ToRole="Оплата" />
+  </EntityType>
+  <EntityType Name="Календарь_занятий">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="GroupId" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="String" Name="DayOfWeek" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DataRec" Nullable="false" />
+    <Property Type="Int32" Name="LoginRec" Nullable="false" />
+    <Property Type="Binary" Name="upsize_ts" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_Календарь_занятий_Названия_танцев" FromRole="Календарь_занятий" ToRole="Названия_танцев" />
+  </EntityType>
+  <EntityType Name="Контактные_лица">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Название_организации" />
+    <Property Type="String" Name="ФИО" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Телефон" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Организации" Relationship="Cuatro_Caminos_BDModel.Контактные_лица_FK00" FromRole="Контактные_лица" ToRole="Организации" />
+  </EntityType>
+  <EntityType Name="Контакты">
+    <Key>
+      <PropertyRef Name="ИД" />
+    </Key>
+    <Property Type="Int32" Name="ИД" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Организация" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Фамилия" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Имя" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Адрес_электронной_почты" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Должность" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Рабочий_телефон" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Домашний_телефон" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Мобильный_телефон" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Номер_факса" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Адрес" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Город" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Область__край" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Индекс" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Страна_или_регион" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Веб_страница" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Заметки" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Вложения" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="upsize_ts" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Мероприятия">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Дата" Nullable="false" />
+    <Property Type="Int32" Name="ФИО" Nullable="false" />
+    <Property Type="Int32" Name="Название_мероприятия" Nullable="false" />
+    <Property Type="Decimal" Name="Проживание" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Питание" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Оплатил" Precision="19" Scale="4" />
+    <Property Type="Decimal" Name="Остаток" Precision="19" Scale="4" />
+    <Property Type="Boolean" Name="Идет" Nullable="false" />
+    <Property Type="Int32" Name="Транспорт" />
+    <Property Type="String" Name="Примечание" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Наличие_авто" Relationship="Cuatro_Caminos_BDModel.Мероприятия_FK01" FromRole="Мероприятия" ToRole="Наличие_авто" />
+  </EntityType>
+  <EntityType Name="Название_SMS">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SMS" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Sms" FromRole="Название_SMS" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Название_мероприятий">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Date" Nullable="false" />
+    <Property Type="String" Name="Мероприятие" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Примечание" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="DataRec" Nullable="false" />
+    <Property Type="Int32" Name="LiginRecId" Nullable="false" />
+    <Property Type="Boolean" Name="Close" Nullable="false" />
+    <NavigationProperty Name="СписокНаМероприятие" Relationship="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Название_мероприятий" FromRole="Название_мероприятий" ToRole="СписокНаМероприятие" />
+  </EntityType>
+  <EntityType Name="Название_месяцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Месяц" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Оплата" Relationship="Cuatro_Caminos_BDModel.FK_Название_месяцев" FromRole="Название_месяцев" ToRole="Оплата" />
+  </EntityType>
+  <EntityType Name="Название_напитков">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Название_напитков1" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Название_района">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Название_района1" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK03_Районы" FromRole="Название_района" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Название_школ">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Школы" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Visible" Nullable="false" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK04_Школы" FromRole="Название_школ" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Названия_танцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Название_танца" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="DateTimeRec" />
+    <Property Type="Int32" Name="LoginRec" />
+    <NavigationProperty Name="Administrators" Relationship="Cuatro_Caminos_BDModel.FK_Administrators_Названия_танцев" FromRole="Названия_танцев" ToRole="Administrators" />
+    <NavigationProperty Name="Cash" Relationship="Cuatro_Caminos_BDModel.FK_Cash_Названия_танцев" FromRole="Названия_танцев" ToRole="Cash" />
+    <NavigationProperty Name="PriceHistory" Relationship="Cuatro_Caminos_BDModel.FK_PriceHistory_Названия_танцев" FromRole="Названия_танцев" ToRole="PriceHistory" />
+    <NavigationProperty Name="Visits" Relationship="Cuatro_Caminos_BDModel.FK_Visits_Названия_танцев" FromRole="Названия_танцев" ToRole="Visits" />
+    <NavigationProperty Name="Календарь_занятий" Relationship="Cuatro_Caminos_BDModel.FK_Календарь_занятий_Названия_танцев" FromRole="Названия_танцев" ToRole="Календарь_занятий" />
+    <NavigationProperty Name="Оплата" Relationship="Cuatro_Caminos_BDModel.FK_Название_танцев_Оплата" FromRole="Названия_танцев" ToRole="Оплата" />
+  </EntityType>
+  <EntityType Name="Наличие_авто">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ФИО" />
+    <NavigationProperty Name="Мероприятия" Relationship="Cuatro_Caminos_BDModel.Мероприятия_FK01" FromRole="Наличие_авто" ToRole="Мероприятия" />
+  </EntityType>
+  <EntityType Name="Оплата">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Дата_оплаты" Nullable="false" />
+    <Property Type="Int32" Name="Код_Ученика" Nullable="false" />
+    <Property Type="Int32" Name="Месяц" Nullable="false" />
+    <Property Type="Int32" Name="Сумма" Nullable="false" />
+    <Property Type="String" Name="Примечание" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Преподаватель" Nullable="false" />
+    <Property Type="Int32" Name="Название_танца" Nullable="false" />
+    <Property Type="Binary" Name="upsize_ts" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Int32" Name="LoginRecId" Nullable="false" />
+    <Property Type="DateTime" Name="DateTimeRec" />
+    <Property Type="Int32" Name="Visits" />
+    <NavigationProperty Name="Имена_преподавателей" Relationship="Cuatro_Caminos_BDModel.FK_Имена_Преподавателей" FromRole="Оплата" ToRole="Имена_преподавателей" />
+    <NavigationProperty Name="Название_месяцев" Relationship="Cuatro_Caminos_BDModel.FK_Название_месяцев" FromRole="Оплата" ToRole="Название_месяцев" />
+    <NavigationProperty Name="Названия_танцев" Relationship="Cuatro_Caminos_BDModel.FK_Название_танцев_Оплата" FromRole="Оплата" ToRole="Названия_танцев" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей" FromRole="Оплата" ToRole="Списки_людей" />
+    <NavigationProperty Name="Списки_людей1" Relationship="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей_Login" FromRole="Оплата" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="Организации">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Название_организации" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Адрес" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Скидка" />
+    <NavigationProperty Name="Контактные_лица" Relationship="Cuatro_Caminos_BDModel.Контактные_лица_FK00" FromRole="Организации" ToRole="Контактные_лица" />
+    <NavigationProperty Name="Цены" Relationship="Cuatro_Caminos_BDModel.Цены_FK00" FromRole="Организации" ToRole="Цены" />
+  </EntityType>
+  <EntityType Name="Списки_людей">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Дата_регистрации" />
+    <Property Type="String" Name="Фамилия" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Имя" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Отчество" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Дата_рождения" />
+    <Property Type="Int32" Name="Район" />
+    <Property Type="String" Name="Телефон" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SMS" Nullable="false" />
+    <Property Type="String" Name="e_mail" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Вконтекте" Nullable="false" />
+    <Property Type="String" Name="От_куда_узнал_а_" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Хобби" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Участие_в_выступлениях" Nullable="false" />
+    <Property Type="String" Name="Примечание" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Школы" />
+    <Property Type="String" Name="Пол" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Выбыл_из_школы" Nullable="false" />
+    <Property Type="String" Name="Кого_привел" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Дата_выбытия" />
+    <Property Type="Boolean" Name="Не_печатать" Nullable="false" />
+    <Property Type="Int32" Name="Кто_привел" />
+    <Property Type="Boolean" Name="Студент" Nullable="false" />
+    <Property Type="Int32" Name="Семейная_пара" />
+    <Property Type="Boolean" Name="Наличие_авто" Nullable="false" />
+    <Property Type="Binary" Name="upsize_ts" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="Login" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LoginRecId" Nullable="false" />
+    <Property Type="DateTime" Name="DateTimeRec" />
+    <NavigationProperty Name="Administrators" Relationship="Cuatro_Caminos_BDModel.FK_Administrators_Списки_людей" FromRole="Списки_людей" ToRole="Administrators" />
+    <NavigationProperty Name="Cash" Relationship="Cuatro_Caminos_BDModel.FK_Cash_Списки_людей" FromRole="Списки_людей" ToRole="Cash" />
+    <NavigationProperty Name="Notes" Relationship="Cuatro_Caminos_BDModel.FK_Notes_Списки_людей" FromRole="Списки_людей" ToRole="Notes" />
+    <NavigationProperty Name="Visits" Relationship="Cuatro_Caminos_BDModel.FK_Visits_Списки_людей" FromRole="Списки_людей" ToRole="Visits" />
+    <NavigationProperty Name="Название_SMS" Relationship="Cuatro_Caminos_BDModel.FK_Sms" FromRole="Списки_людей" ToRole="Название_SMS" />
+    <NavigationProperty Name="Название_района" Relationship="Cuatro_Caminos_BDModel.FK03_Районы" FromRole="Списки_людей" ToRole="Название_района" />
+    <NavigationProperty Name="Название_школ" Relationship="Cuatro_Caminos_BDModel.FK04_Школы" FromRole="Списки_людей" ToRole="Название_школ" />
+    <NavigationProperty Name="Оплата" Relationship="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей" FromRole="Списки_людей" ToRole="Оплата" />
+    <NavigationProperty Name="Оплата1" Relationship="Cuatro_Caminos_BDModel.FK_Оплата_Списки_людей_Login" FromRole="Списки_людей" ToRole="Оплата" />
+    <NavigationProperty Name="СписокНаМероприятие" Relationship="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Списки_людей" FromRole="Списки_людей" ToRole="СписокНаМероприятие" />
+  </EntityType>
+  <EntityType Name="Список_дат">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="Дата" />
+    <Property Type="Int16" Name="Месяц" />
+    <Property Type="Int16" Name="Год" />
+  </EntityType>
+  <EntityType Name="Список_лет">
+    <Key>
+      <PropertyRef Name="Год" />
+    </Key>
+    <Property Type="Int16" Name="Год" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Список_месяцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Месяц" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="СписокНаМероприятие">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PeopleId" Nullable="false" />
+    <Property Type="Int32" Name="МероприятеID" Nullable="false" />
+    <Property Type="Boolean" Name="Avto" Nullable="false" />
+    <Property Type="Int32" Name="Pay" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Ok" Nullable="false" />
+    <Property Type="DateTime" Name="DataTimeCreate" Nullable="false" />
+    <Property Type="Int32" Name="LiginRecId" Nullable="false" />
+    <NavigationProperty Name="Название_мероприятий" Relationship="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Название_мероприятий" FromRole="СписокНаМероприятие" ToRole="Название_мероприятий" />
+    <NavigationProperty Name="Списки_людей" Relationship="Cuatro_Caminos_BDModel.FK_СписокНаМероприятие_Списки_людей" FromRole="СписокНаМероприятие" ToRole="Списки_людей" />
+  </EntityType>
+  <EntityType Name="ТБ_Домики">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Название_организации" />
+    <Property Type="Int32" Name="Кол_во_мест" />
+    <Property Type="Int32" Name="Организация" />
+  </EntityType>
+  <EntityType Name="Цены">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Type="Int32" Name="Код" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Название_организации" />
+    <Property Type="String" Name="C__домика" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Цена" Precision="19" Scale="4" />
+    <NavigationProperty Name="Организации" Relationship="Cuatro_Caminos_BDModel.Цены_FK00" FromRole="Цены" ToRole="Организации" />
+  </EntityType>
+  <Association Name="FK_Administrators_Названия_танцев">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Administrators" Role="Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="Название_танца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Administrators_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Administrators" Role="Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="Код_Ученика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_CashCategory">
+    <End Type="Cuatro_Caminos_BDModel.CashCategory" Role="CashCategory" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Cash" Role="Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CashCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_Названия_танцев">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Cash" Role="Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Cash" Role="Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CashCategory_CashCategory">
+    <End Type="Cuatro_Caminos_BDModel.CashCategory" Role="CashCategory" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.CashCategory" Role="CashCategory1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CashCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CashCategory1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_NotesCategory">
+    <End Type="Cuatro_Caminos_BDModel.NotesCategory" Role="NotesCategory" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Notes" Role="Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NotesCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="IdCategoryNotes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Notes" Role="Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="КодУченика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotesCategory_NotesCategory1">
+    <End Type="Cuatro_Caminos_BDModel.NotesCategory" Role="NotesCategory" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.NotesCategory" Role="NotesCategory1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="NotesCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NotesCategory1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceHistory_Price">
+    <End Type="Cuatro_Caminos_BDModel.Price" Role="Price" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.PriceHistory" Role="PriceHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PriceHistory">
+        <PropertyRef Name="PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceHistory_Названия_танцев">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.PriceHistory" Role="PriceHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="PriceHistory">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Названия_танцев">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Visits" Role="Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Visits" Role="Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Имена_Преподавателей">
+    <End Type="Cuatro_Caminos_BDModel.Имена_преподавателей" Role="Имена_преподавателей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Оплата" Role="Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Имена_преподавателей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Преподаватель" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Календарь_занятий_Названия_танцев">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Календарь_занятий" Role="Календарь_занятий" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Календарь_занятий">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Контактные_лица_FK00">
+    <End Type="Cuatro_Caminos_BDModel.Организации" Role="Организации" Multiplicity="0..1" />
+    <End Type="Cuatro_Caminos_BDModel.Контактные_лица" Role="Контактные_лица" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Организации">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Контактные_лица">
+        <PropertyRef Name="Название_организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Мероприятия_FK01">
+    <End Type="Cuatro_Caminos_BDModel.Наличие_авто" Role="Наличие_авто" Multiplicity="0..1" />
+    <End Type="Cuatro_Caminos_BDModel.Мероприятия" Role="Мероприятия" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Наличие_авто">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Мероприятия">
+        <PropertyRef Name="Транспорт" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sms">
+    <End Type="Cuatro_Caminos_BDModel.Название_SMS" Role="Название_SMS" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название_SMS">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки_людей">
+        <PropertyRef Name="SMS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокНаМероприятие_Название_мероприятий">
+    <End Type="Cuatro_Caminos_BDModel.Название_мероприятий" Role="Название_мероприятий" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.СписокНаМероприятие" Role="СписокНаМероприятие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название_мероприятий">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="СписокНаМероприятие">
+        <PropertyRef Name="МероприятеID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Название_месяцев">
+    <End Type="Cuatro_Caminos_BDModel.Название_месяцев" Role="Название_месяцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Оплата" Role="Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название_месяцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Месяц" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK03_Районы">
+    <End Type="Cuatro_Caminos_BDModel.Название_района" Role="Название_района" Multiplicity="0..1" />
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название_района">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки_людей">
+        <PropertyRef Name="Район" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK04_Школы">
+    <End Type="Cuatro_Caminos_BDModel.Название_школ" Role="Название_школ" Multiplicity="0..1" />
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название_школ">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки_людей">
+        <PropertyRef Name="Школы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Название_танцев_Оплата">
+    <End Type="Cuatro_Caminos_BDModel.Названия_танцев" Role="Названия_танцев" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Оплата" Role="Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия_танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Название_танца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Оплата_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Оплата" Role="Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Код_Ученика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Оплата_Списки_людей_Login">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.Оплата" Role="Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="LoginRecId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Цены_FK00">
+    <End Type="Cuatro_Caminos_BDModel.Организации" Role="Организации" Multiplicity="0..1" />
+    <End Type="Cuatro_Caminos_BDModel.Цены" Role="Цены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Организации">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Цены">
+        <PropertyRef Name="Название_организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокНаМероприятие_Списки_людей">
+    <End Type="Cuatro_Caminos_BDModel.Списки_людей" Role="Списки_людей" Multiplicity="1" />
+    <End Type="Cuatro_Caminos_BDModel.СписокНаМероприятие" Role="СписокНаМероприятие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки_людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="СписокНаМероприятие">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

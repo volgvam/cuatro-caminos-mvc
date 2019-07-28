@@ -1,0 +1,84 @@
+﻿@model CuatroCaminosMvcApplication.Models.Notes
+
+@{
+    ViewBag.Title = "Notes";
+    
+    int КодУченика;
+}
+
+@if (ViewBag.КодУченика != null)
+{
+    КодУченика = (int)ViewBag.КодУченика;
+    
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@*<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>*@    
+
+    using (Ajax.BeginForm(
+                 "NotesCreate",
+                 "People",
+                 new AjaxOptions
+                 {
+                     HttpMethod = "post",
+                     UpdateTargetId = "target"
+                 }))
+    {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Создание заметки</legend>
+
+            @Html.Hidden("КодУченика", КодУченика)
+
+        <div style="vertical-align: text-top;  width: 700px" align="center">
+
+            <div style="float: left">
+
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Message)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Message) <br/>
+                        @Html.ValidationMessageFor(model => model.Message)
+                    </div>
+
+
+        </div>
+
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DatePlan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DatePlan)<br/>
+            @Html.ValidationMessageFor(model => model.DatePlan)
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._IdCategoryNotes;} 
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdCategoryNotes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdCategoryNotes)<br/>
+            @Html.ValidationMessageFor(model => model.IdCategoryNotes)
+        </div>
+
+
+
+
+
+
+        <p>
+            <input type="submit" value="Создать заметку" />
+        </p>
+
+        </div>
+    </fieldset>
+    
+    <p id="target"></p>
+    }
+
+}

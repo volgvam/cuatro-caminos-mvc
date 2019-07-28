@@ -1,0 +1,176 @@
+@charset "utf-8";
+/* Простой «резиновый» носитель
+   Примечание. Для «резинового» носителя требуется удалить атрибуты высоты и ширины из HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE6 не поддерживает атрибут max-width, поэтому по умолчанию используется ширина 100 % */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Свойства Dreamweaver Fluid Grid
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Вдохновлено книгой «Отзывчивый веб-дизайн» (Responsive Web Design) Итана Маркота (Ethan Marcote) 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	и системой Golden Grid Джони Корпи (Joni Korpi)
+	http://goldengridsystem.com/
+*/
+
+/* Мобильный макет: 480 пикс. и меньше. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: none;
+	float: left;
+	margin-left: 4.1666%;
+	width: 100%;
+	display: block;
+}
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#article {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#birthday {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 58.3333%;
+	display: block;
+}
+
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+
+/* Макет для планшета: 481–768 пикс. Наследует стили от мобильного макета. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+#LayoutDiv1 {
+	clear: none;
+	float: left;
+	margin-left: 2.5641%;
+	width: 74.3589%;
+	display: block;
+}
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#article {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 61.5384%;
+	display: block;
+}
+
+#birthday {
+	clear: none;
+	float: left;
+	margin-left: 2.5641%;
+	width: 35.8974%;
+	display: block;
+}
+
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+}
+
+/* Макет для настольного компьютера: 769–1232 пикс. (максимум). Наследует стили от мобильного макета и макета для планшета. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+}
+#LayoutDiv1 {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 69.3877%;
+	display: block;
+}
+#head {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+#article {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 69.3877%;
+	display: block;
+}
+
+#birthday {
+	clear: none;
+	float: left;
+	margin-left: 2.0408%;
+	width: 28.5714%;
+	display: block;
+}
+
+#footer {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+}

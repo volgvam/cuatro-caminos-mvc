@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется в процессе публикации или упаковки вашего веб-проекта. Вы можете настроить поведение процесса,
+изменив этот файл MSBuild. Дополнительные сведения см. по адресу http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2012-01-10T04:06:16.0000000+04:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/45mIIe680KAMo9c6FkIEgAAAAACAAAAAAAQZgAAAAEAACAAAAASxkn2+IUlx8hz/aUW62tJtESlW4WLBhAKK+82xHHcnQAAAAAOgAAAAAIAACAAAACi9XC+Tn0fMPEwia3L6EYKSE8c1EzOzDw5tB7bOFjPHiAAAAA+Xc0uNzV9u9vDIiml17j4cO8wN5dEIW91HWPYWshgh0AAAAAHRyKR95aIRgMhqjLLWMziOq/iX6aDiLDLWPD5ZPE8GUY+iQhFxbNz6oaLUVomyF7F9bMtpvjmWMZsQii61WUs</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CuatroCaminosMvcApplication.dll">
+      <publishTime>01/06/2012 17:25:32</publishTime>
+    </File>
+    <File Include="bin/CuatroCaminosMvcApplication.pdb">
+      <publishTime>01/06/2012 17:25:32</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/11/2011 14:51:59</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.xml">
+      <publishTime>12/11/2011 14:51:59</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Helpers.resources.dll">
+      <publishTime>01/10/2011 11:11:10</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.Mvc.resources.dll">
+      <publishTime>01/12/2011 18:24:26</publishTime>
+    </File>
+    <File Include="bin/ru/System.Web.WebPages.resources.dll">
+      <publishTime>01/10/2011 11:11:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.xml">
+      <publishTime>12/06/2010 11:15:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/05/2011 17:42:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.xml">
+      <publishTime>02/09/2011 11:26:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>03/18/2010 19:31:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/05/2011 15:45:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.xml">
+      <publishTime>12/06/2010 11:15:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/27/2011 00:00:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/11/2011 14:52:03</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/06/2012 17:26:16</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

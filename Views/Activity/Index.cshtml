@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CuatroCaminosMvcApplication.Models.Название_мероприятий>
+
+@{
+    ViewBag.Title = "Список мероприятий";
+    string text = "";
+}
+
+<h2>Список мероприятий</h2>
+
+<p>
+    @Html.ActionLink("Создание нового мероприятия", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Дата
+        </th>
+
+        <th>
+            Название мероприятия
+        </th>
+
+        <th>
+            Описание мероприятия
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+
+        <td nowrap="nowrap">
+            @Html.ActionLink(item.Мероприятие, "Details", new { id = item.Код }) 
+            
+        </td>
+        <td>
+@{
+    if (item.Примечание!= null && item.Примечание.Length > 201)
+    {
+        text =  item.Примечание;
+        @Html.Encode(String.Format("{0}...", text.Remove(200)))
+                                    
+    }
+    else
+    {
+        @Html.DisplayFor(modelItem => item.Примечание)
+    }
+    
+}
+        </td>
+
+        <td  nowrap="nowrap">
+            @Html.ActionLink("Edit", "Edit", new { id=item.Код }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Код }) 
+            
+@*            |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Код })*@
+        </td>
+    </tr>
+}
+
+</table>

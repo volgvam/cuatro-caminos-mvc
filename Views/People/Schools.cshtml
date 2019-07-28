@@ -1,0 +1,55 @@
+﻿@using CuatroCaminosMvcApplication
+
+
+@{
+    ViewBag.Title = "Список людей";
+
+    ICollection<CuatroCaminosMvcApplication.Models.Название_школ>  названиеШкол = ViewBag.Schools;
+
+    
+}
+
+<h2>Список людей школы @ViewBag.School </h2>
+
+@ViewBag._Message
+
+
+
+<p>
+@*   
+    @Html.ActionLink("Создание новой карточки клиента", "Create") | 
+    @Html.ActionLink("Люди \"Без телефонов\"", "Notphones")  |
+*@
+
+    @Html.ActionLink("Назад", "Index") | 
+
+
+@if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+{
+@*           
+                 @Html.ActionLink("Salsa Del Amor", "Schools", new {schools = 1}) 
+               @: | <br/>
+*@
+    
+    
+    foreach (var item in названиеШкол)
+    {
+        
+        
+            
+        
+            @Html.ActionLink(item.Школы, "Schools", new { schools = item.Код }) @:|         
+    }
+
+
+}
+
+
+</p>
+
+@Html.Partial("_PartialIndex")
+
+<p>
+    @Html.ActionLink("Создать нового", "Create") | 
+    @Html.ActionLink("Без анкеты", "Notphones")
+</p>

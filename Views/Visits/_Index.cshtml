@@ -1,0 +1,15 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model PayViewModel
+           
+@Html.DisplayForModel()           
+            
+@using (Html.BeginForm()) 
+{ 
+    <label for="paiement_cash">Cash</label> 
+    @Html.RadioButtonFor(x => x.VisitsEnum, "Cash", new { id = "paiement_cash" }) 
+ 
+    <label for="paiement_cc">Credit card</label> 
+    @Html.RadioButtonFor(x => x.VisitsEnum, "CreditCard", new { id = "paiement_cc" }) 
+ 
+    <input type="submit" value="OK" /> 
+} 

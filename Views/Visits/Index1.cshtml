@@ -1,0 +1,38 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model VisitsViewModel
+
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>Дата</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.DatePay) {
+
+    <tr>
+        
+        <td>
+            
+            @Html.DisplayFor(mod => item) 
+            
+            @item.Date.ToString("d")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+            @Html.DisplayForModel()

@@ -1,0 +1,40 @@
+﻿
+@{
+    SelectList selectList = ViewBag.selectList ?? new SelectList("");
+    String name = ViewBag.Name != null ? ViewBag.Name.ToString() : "";
+    String id = ViewBag.IdPeople != null ? ViewBag.IdPeople.ToString() : "";
+    
+}
+
+<style>
+	.ui-autocomplete-loading { background: white url('/Content/themes/base/images/ui-anim_basic_16x16.gif') right center no-repeat; }
+</style>
+	<script>
+	    $(function () {
+
+	        $("#name").autocomplete({
+	            source: "@Url.Action("searchJsonPeopleName","Service")",
+	            minLength: 2,
+	            change : function (event, ui) {
+	                $(".name").val(ui.item ? ui.item.value : this.value);
+	            }
+	            
+	        });
+	    });
+	</script>
+
+
+
+
+@*	@:помощь в поиске ФИО 
+*@
+    <input id="name" value='@name'  class="text-box single-line"/>  
+   
+ @Html.TextBox("", @name, new { @class = "name", style = "width: 1px; visibility:hidden" })
+
+    
+
+
+
+@*        @Html.DropDownList("", selectList, "", new { @class = "peopleid", style = "width: 200px; visibility:hidden" })
+*@

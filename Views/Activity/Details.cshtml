@@ -1,0 +1,53 @@
+﻿@using CuatroCaminosMvcApplication
+
+@{
+    ViewBag.Title = "Мероприятие: " + @ViewBag.NameActivity;
+}
+
+<h2>@ViewBag.NameActivity</h2>
+
+<p>
+
+    @Html.ActionLink("Назад к списку мероприятий", "Index")
+
+
+            @if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+            {
+                
+                    @:  |  @Html.ActionLink("Экспорт телефонов", "ExportCsv", new { id = ViewBag.ActivityId })
+                
+            }
+
+</p>
+
+
+@{
+    string description = ViewBag.Description;
+
+    if (!String.IsNullOrEmpty(description))
+    {
+      <hr/>
+            <blockquote>
+                <pre>
+                    @String.Format(description)
+                </pre>
+            </blockquote>
+      <hr/>
+    }    
+    
+}
+
+
+
+
+
+
+
+@Html.Action("CreateActivityDetails")
+
+<p>
+    @Html.ActionLink("Назад к списку мероприятий", "Index")
+</p>
+
+
+

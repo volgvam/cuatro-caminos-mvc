@@ -1,0 +1,159 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model CashAndPayViewModel
+
+@{
+    ViewBag.Title = "Проверка оплаты по дням";
+
+    int pay = 0;
+    int cash = 0;
+    int paySumm = 0;
+    int cashSumm = 0;
+    int id = 0;
+}
+
+<h2>Проверка оплаты по дням</h2>
+
+
+<p>
+    @Html.ActionLink("Вернутся в кассу", "Index") |
+    @Html.ActionLink("Внести оплату в кассу", "Create") 
+
+
+</p>
+
+
+<table>
+    <tr>
+        <th>
+            Дата оплаты
+        </th>
+        <th>
+            Группа
+        </th>
+        <th>
+            По отчету
+        </th>
+        <th>
+            По факту
+        </th>
+        <th>
+            Разница
+        </th>
+
+    </tr>
+
+@foreach (var itemDate in Model.Date)
+{
+    <tr>
+        <td>
+            @Html.Encode(itemDate.Date.ToString("d"))
+        </td>
+        <td>
+        @foreach (List_IdAndName itemGroup in Model.Group)
+        {
+
+            pay = @Model.Pay(itemDate, itemGroup.Names);
+            cash = @Model.Cash(itemDate, itemGroup.Names);
+
+            if (pay != 0 || cash != 0)
+            {
+                  @Html.ActionLink(itemGroup.Names, "Month", "Payment", new { gruppa = itemGroup.Id, month = itemDate.Date.Month }, null)
+                <br/>
+            }
+        }
+                
+
+        </td>
+        <td class="many">
+
+        @foreach (List_IdAndName itemGroup in Model.Group)
+        {
+
+            pay = @Model.Pay(itemDate, itemGroup.Names);
+            cash = @Model.Cash(itemDate, itemGroup.Names);
+
+            if (pay != 0 || cash != 0)
+            {
+               
+                    @Html.Encode(pay)
+                <br/>
+            }
+        }
+        
+        </td>
+        <td class="many">
+        @foreach (List_IdAndName itemGroup in Model.Group)
+        {
+
+            pay = @Model.Pay(itemDate, itemGroup.Names);
+            cash = @Model.Cash(itemDate, itemGroup.Names);
+
+            if (pay != 0 || cash != 0)
+            {
+                id = Model.Id(itemDate, itemGroup.Names, cash);
+
+                if (id != 0 && cash != 0)
+                {
+                    @Html.ActionLink(cash.ToString(), "Edit", new { id = id })     
+                }
+                else
+                {
+                    @Html.Encode(cash)
+                }
+               
+                <br/>
+            }
+        }
+
+
+        </td>
+
+        <td class="many">
+        @foreach (List_IdAndName itemGroup in Model.Group)
+        {
+
+            pay = @Model.Pay(itemDate, itemGroup.Names);
+            cash = @Model.Cash(itemDate, itemGroup.Names);
+
+            if (pay != 0 || cash != 0)
+            {
+
+                if (pay - cash > 0)
+                {
+                    <span style="color: red">
+                        @Html.Encode(pay - cash)
+                    </span>
+                }
+                else
+                {
+                    if (pay - cash != 0)
+                    {
+                        @Html.Encode(pay - cash)
+                    }
+
+                }
+               
+                    
+                <br/>
+            }
+        }
+
+
+        </td>
+
+    </tr>
+}
+
+@{
+    paySumm = Model.PaySumm();
+    cashSumm = Model.CashSumm();
+}
+
+<tr>
+<td colspan="2"><strong>ИТОГО</strong></td>
+
+<td class="many"><strong>@Html.Encode(paySumm)</strong></td>
+<td class="many"><strong>@Html.Encode(cashSumm)</strong></td>
+<td class="many"><strong>@Html.Encode(paySumm - cashSumm)</strong></td>
+</tr>
+</table>

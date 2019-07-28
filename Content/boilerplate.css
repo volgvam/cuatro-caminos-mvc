@@ -1,0 +1,280 @@
+@charset "utf-8";
+/*
+/* 
+ * HTML5 ✰ Шаблон
+ *
+ * Ниже приведены результаты трудоемких исследований по использованию стилей в различных браузерах. 
+ * Выражается благодарность Николасу Галлахеру (Nicolas Gallagher), Джонатану Нилу (Jonathan Neal),
+ * Кроку Кэмену (Kroc Camen), а также сообществу по разработке H5BP и группе разработки.
+ *
+ * Подробная информация об этом CSS: h5bp.com/css
+ * 
+ * Изменения в Dreamweaver:
+ * 1. Закомментирована подсветка выделения
+ * 2. Удален раздел медиазапросов (мы добавляем собственные запросы в отдельном файле)
+ *
+ * ==|== нормализовать ==========================================================
+ */
+
+
+/* =============================================================================
+   определения отображения HTML5
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   База
+   ========================================================================== */
+
+/*
+ * 1. Исправление изменения размера текста в IE6/7 при установке размера шрифта тела в единицах em
+ * 2. Принудительное применение вертикальной строки прокрутки в браузерах, отличных от IE
+ * 3. Предотвращение изменение размера текста iOS при изменении ориентации устройства без отключения пользовательского масштаба: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Удаление тени текста в выделении выбора: h5bp.com/i
+ * Эти объявления выбора должны быть раздельными
+ * Кроме того: веселый розовый! (или настройте фоновый цвет в соответствии с вашим дизайном)
+ */
+
+/* Dreamweaver: удалите эти комментарии, если вы хотите настроить выделение выбранной области
+ *::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ *::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ */
+
+/* =============================================================================
+   Ссылки
+   ========================================================================== */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Улучшение читаемости при получении фокуса и наведении указателя во всех браузерах: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Оформление
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Повторное объявление семейства моноширинных шрифтов: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Улучшение читаемости предварительно форматированного текста во всех браузерах */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Размещение верхнего и нижнего индекса без влияния на высоту строки: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Списки
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Встроенное содержимое
+   ========================================================================== */
+
+/*
+ * 1. Улучшение качества изображения при масштабировании в IE7: h5bp.com/d
+ * 2. Устранение разрыва между изображениями и границами в контейнерах изображений: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Исправление: переполнение не скрыто в IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Фигуры
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Формы
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Указываем, что метка (label) передаст фокус связанному элементу формы */
+label { cursor: pointer; }
+
+/* 
+ * 1. Исправление: цвет не наследуется в IE6/7/8/9 
+ * 2. Исправление: выравнивание неправильно отображается в IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Исправление: размер шрифта не наследуется во всех браузерах
+ * 2. Удаление полей в FF3/4 S5 Chrome
+ * 3. Определение согласованного вертикального выравнивания во всех браузерах
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Определение высоты строки как нормальной в соответствии с FF3/4 (задано с помощью !important в таблице стилей UA)
+ * 2. Исправление неправильного отображения внутренних интервалов в IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Повторное объявление внутренних интервалов в элементе table для предотвращения проблем с перекрытием и пробелами в IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Отображение курсора в виде руки для элементов формы, которые можно щелкать
+ * 2. Разрешение применения стилей к элементам формы, которые можно щелкать, в iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Согласованное изменение размера полей и внешний вид полей
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Устранение внутреннего заполнения и границ в FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Удаление вертикальной строки прокрутки по умолчанию в IE6/7/8/9 
+ * 2. Разрешается только изменение размера по вертикали
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Цвета для обозначения правильности формы */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Таблицы
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== основные стили =====================================================
+   Автор: 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==|== несемантические вспомогательные классы ========================================
+   Определите свои стили до этого раздела.
+   ========================================================================== */
+
+/* Замена изображения */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Скрыть от программ чтения с экрана и браузеров: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Скрыть только визуально, но оставить доступным для программ чтения с экрана: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Расширение класса .visuallyhidden, позволяющее передать фокус элементу при навигации с помощью клавиатуры: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Скрыть визуально и от программ чтения с экрана, но сохранить макет */
+.invisible { visibility: hidden; }
+
+/* Содержание потоков: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== стили печати =======================================================
+   Стили печати.
+   Встроено, чтобы не требовалось HTTP-соединение: h5bp.com/r
+   ========================================================================== */
+ 
+ @media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Более быстрая печать черного цвета: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Не показывать ссылки для изображений или javascript/внешние ссылки */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

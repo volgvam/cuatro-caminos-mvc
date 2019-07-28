@@ -1,0 +1,210 @@
+﻿@using System.Globalization
+@using System.Threading
+@using CuatroCaminosMvcApplication.Models
+@using CuatroCaminosMvcApplication.MyHtmlHelpers;
+@model MyEntityViewModel
+
+<h2>Отчет по оплате: @ViewBag.NameGroup</h2>
+
+
+
+@{
+    int item = 0;
+    var _valuex=0;
+    int[] _valuey = new int[1000];
+
+    int many=0;
+
+    string fio;
+    
+    System.Globalization.CultureInfo ci = new System.Globalization.CultureInfo("ru-RU");
+
+    
+    CultureInfo cultureInfo = new CultureInfo("ru-RU");
+//    cultureInfo.DateTimeFormat.FirstDayOfWeek = DayOfWeek.Monday;
+//    Thread.CurrentThread.CurrentCulture = cultureInfo; 
+
+
+}
+<p>
+    @Html.ActionLink("Назад", "Index") | 
+    @Html.ActionLink("Внести новую оплату", "Create") |
+    @Html.ActionLink("Список оплаты", "Index", "Export", new {gruppa = Request.QueryString["gruppa"]}, null) 
+</p>
+
+@*<p>
+    @Html.ActionLink("Месяц назад", "Month", ) | 
+
+</p>
+*@
+
+@if (Model.Names.Count >0){
+
+<table>
+<tr>
+    <th class="date">
+        Имя
+    </th>
+    @foreach (var date in Model.Dates)
+    {
+         <th class="date">
+             @Html.Encode(date.ToString("d")) 
+                 <br />
+             @Html.Encode(ci.DateTimeFormat.GetDayName((DayOfWeek)date.DayOfWeek))
+
+             
+@*
+           @{
+                     ci.DateTimeFormat.GetDayName((DayOfWeek)date.DayOfWeek);
+                     int delta = date.DayOfWeek - Thread.CurrentThread.CurrentCulture.DateTimeFormat.FirstDayOfWeek + 1;
+                 
+                 @delta
+             }
+*@         
+
+     </th>
+    }
+@*    <th>Остаток</th>*@
+    <th>ИТОГО</th>
+</tr>
+
+@foreach (List_IdAndName name in Model.Names)
+{
+     <tr>
+        <td class="fio">
+            
+    @{fio = name.Names;}                
+
+            @if (Model[name.Names] == 151)
+            {
+            
+                @Html.Encode(fio)   
+            }
+            else
+            {
+                @Html.ActionLink(fio, "Details", "People", new { id = name.Id }, null)
+            }
+
+
+        </td>
+        
+        @foreach (var date in Model.Dates)
+        {
+            <td  class="many">
+
+
+                @{
+                    //                  @Html.Encode(Model[name, date] != 0 ? Model[name, date] : null)
+
+                    many = Model[name.Names, date] ?? 0;
+
+
+                    if (Model.GetIdPayCount(fio, date) != 1)
+                    {
+                        @Html.Encode(Model[fio, date] != 0 ? Model[name.Names, date] : null)
+                    }
+                    else
+                    {
+                        @Html.ActionLink((many != 0 ? many.ToString() : " "), "Edit", "Payment", new { id = @Model.GetIdPay(fio, date)  }, null)
+
+                    }
+
+
+
+                    if (Model[fio, date] != null)
+                    {
+
+                    
+                        _valuex += Convert.ToInt32(Model[fio, date]);
+                        _valuey[item] += Convert.ToInt32(Model[fio, date]);
+
+@*                       @Html.GetVisit(fio, date)
+                       
+                    @Model.PaySumm(fio)
+                    @: ,
+                    @Model.Visit(fio)
+                    @: ,
+                    @Model.Freezing(fio)
+                    @: ,
+                    @Model.hghg(fio)
+
+                    @: ,
+                    @Model.LastPrice8()
+
+                    
+                    @: , --
+//                    @Model .GetLastPrice11(1)
+*@
+                        
+
+                       
+                        
+                    
+                    
+                    }
+                  
+
+                    item++;
+
+                }
+            </td>
+        }
+        
+        
+
+
+        <th class="many">
+        
+        @_valuex  
+        
+        @{
+        _valuex = 0;
+        item = 0;
+         }
+        </th>
+     </tr>
+}
+
+
+    <tr>
+                <th> </th>
+
+
+
+        @foreach (var date in Model.Dates)
+        {
+         <th class="date">
+             @Html.Encode(date.ToString("d"))
+         </th>
+        }
+    </tr>
+
+
+    <tr>
+                <th>Сумма</th>
+
+        @foreach (var date in Model.Dates)
+        {
+             <th class="many">
+
+                  @Html.Encode(_valuey[item])
+                  @{item++;}
+             </th>
+        }
+
+
+
+    </tr>
+
+
+
+</table>
+    <br/><br/>
+    <text>    
+                Всего: @Model.Names.Count записей.
+    </text>
+}
+
+<br/><br/>
+    @Html.ActionLink("Назад", "Index") | 
+    @Html.ActionLink("Внести новую оплату", "Create") 

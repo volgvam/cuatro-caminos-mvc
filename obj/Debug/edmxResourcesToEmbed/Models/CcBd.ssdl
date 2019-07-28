@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="StoreContainer">
+    <EntitySet Name="Administrators" EntityType="Store.Administrators" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cash" EntityType="Store.Cash" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CashCategory" EntityType="Store.CashCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Notes" EntityType="Store.Notes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NotesCategory" EntityType="Store.NotesCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Price" EntityType="Store.Price" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PriceHistory" EntityType="Store.PriceHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visits" EntityType="Store.Visits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Выступления" EntityType="Store.Выступления" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Имена преподавателей" EntityType="Store.Имена преподавателей" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Календарь занятий" EntityType="Store.Календарь занятий" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Контактные лица" EntityType="Store.Контактные лица" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Контакты" EntityType="Store.Контакты" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Мероприятия" EntityType="Store.Мероприятия" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название SMS" EntityType="Store.Название SMS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название мероприятий" EntityType="Store.Название мероприятий" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название месяцев" EntityType="Store.Название месяцев" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название напитков" EntityType="Store.Название напитков" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название района" EntityType="Store.Название района" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Название школ" EntityType="Store.Название школ" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Названия танцев" EntityType="Store.Названия танцев" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Наличие авто" EntityType="Store.Наличие авто" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Оплата" EntityType="Store.Оплата" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Организации" EntityType="Store.Организации" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Списки людей" EntityType="Store.Списки людей" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Список дат" EntityType="Store.Список дат" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Список лет" EntityType="Store.Список лет" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Список месяцев" EntityType="Store.Список месяцев" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="СписокНаМероприятие" EntityType="Store.СписокНаМероприятие" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ТБ Домики" EntityType="Store.ТБ Домики" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Цены" EntityType="Store.Цены" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Administrators_Названия танцев" Association="Store.FK_Administrators_Названия танцев">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Administrators_Списки людей" Association="Store.FK_Administrators_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Administrators" EntitySet="Administrators" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_CashCategory" Association="Store.FK_Cash_CashCategory">
+      <End Role="CashCategory" EntitySet="CashCategory" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_Названия танцев" Association="Store.FK_Cash_Названия танцев">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cash_Списки людей" Association="Store.FK_Cash_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Cash" EntitySet="Cash" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CashCategory_CashCategory" Association="Store.FK_CashCategory_CashCategory">
+      <End Role="CashCategory" EntitySet="CashCategory" />
+      <End Role="CashCategory1" EntitySet="CashCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_NotesCategory" Association="Store.FK_Notes_NotesCategory">
+      <End Role="NotesCategory" EntitySet="NotesCategory" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Notes_Списки людей" Association="Store.FK_Notes_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Notes" EntitySet="Notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotesCategory_NotesCategory1" Association="Store.FK_NotesCategory_NotesCategory1">
+      <End Role="NotesCategory" EntitySet="NotesCategory" />
+      <End Role="NotesCategory1" EntitySet="NotesCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceHistory_Price" Association="Store.FK_PriceHistory_Price">
+      <End Role="Price" EntitySet="Price" />
+      <End Role="PriceHistory" EntitySet="PriceHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PriceHistory_Названия танцев" Association="Store.FK_PriceHistory_Названия танцев">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="PriceHistory" EntitySet="PriceHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sms" Association="Store.FK_Sms">
+      <End Role="Название SMS" EntitySet="Название SMS" />
+      <End Role="Списки людей" EntitySet="Списки людей" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Названия танцев" Association="Store.FK_Visits_Названия танцев">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visits_Списки людей" Association="Store.FK_Visits_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Visits" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Имена_Преподавателей" Association="Store.FK_Имена_Преподавателей">
+      <End Role="Имена преподавателей" EntitySet="Имена преподавателей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Календарь занятий_Названия танцев" Association="Store.FK_Календарь занятий_Названия танцев">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="Календарь занятий" EntitySet="Календарь занятий" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Название_месяцев" Association="Store.FK_Название_месяцев">
+      <End Role="Название месяцев" EntitySet="Название месяцев" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Название_танцев_Оплата" Association="Store.FK_Название_танцев_Оплата">
+      <End Role="Названия танцев" EntitySet="Названия танцев" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Оплата_Списки людей" Association="Store.FK_Оплата_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Оплата_Списки людей_Login" Association="Store.FK_Оплата_Списки людей_Login">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="Оплата" EntitySet="Оплата" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокНаМероприятие_Название мероприятий" Association="Store.FK_СписокНаМероприятие_Название мероприятий">
+      <End Role="Название мероприятий" EntitySet="Название мероприятий" />
+      <End Role="СписокНаМероприятие" EntitySet="СписокНаМероприятие" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокНаМероприятие_Списки людей" Association="Store.FK_СписокНаМероприятие_Списки людей">
+      <End Role="Списки людей" EntitySet="Списки людей" />
+      <End Role="СписокНаМероприятие" EntitySet="СписокНаМероприятие" />
+    </AssociationSet>
+    <AssociationSet Name="FK03_Районы" Association="Store.FK03_Районы">
+      <End Role="Название района" EntitySet="Название района" />
+      <End Role="Списки людей" EntitySet="Списки людей" />
+    </AssociationSet>
+    <AssociationSet Name="FK04_Школы" Association="Store.FK04_Школы">
+      <End Role="Название школ" EntitySet="Название школ" />
+      <End Role="Списки людей" EntitySet="Списки людей" />
+    </AssociationSet>
+    <AssociationSet Name="Контактные лица_FK00" Association="Store.Контактные лица_FK00">
+      <End Role="Организации" EntitySet="Организации" />
+      <End Role="Контактные лица" EntitySet="Контактные лица" />
+    </AssociationSet>
+    <AssociationSet Name="Мероприятия_FK01" Association="Store.Мероприятия_FK01">
+      <End Role="Наличие авто" EntitySet="Наличие авто" />
+      <End Role="Мероприятия" EntitySet="Мероприятия" />
+    </AssociationSet>
+    <AssociationSet Name="Цены_FK00" Association="Store.Цены_FK00">
+      <End Role="Организации" EntitySet="Организации" />
+      <End Role="Цены" EntitySet="Цены" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Administrators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Код_Ученика" Type="int" Nullable="false" />
+    <Property Name="Название_танца" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cash">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DataTimeCreate" Type="datetime" Nullable="false" />
+    <Property Name="DataTimePay" Type="datetime" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="PeopleId" Type="int" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="LoginRecId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Payment_expenses" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CashCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Notes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="КодУченика" Type="int" Nullable="false" />
+    <Property Name="DataCreate" Type="datetime" Nullable="false" />
+    <Property Name="DatePlan" Type="datetime" />
+    <Property Name="Message" Type="text" Nullable="false" />
+    <Property Name="IdCategoryNotes" Type="int" Nullable="false" />
+    <Property Name="LoginRecId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotesCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="text" />
+  </EntityType>
+  <EntityType Name="Price">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Single" Type="int" Nullable="false" />
+    <Property Name="Subscription_8" Type="int" Nullable="false" />
+    <Property Name="Subscription_4" Type="int" />
+    <Property Name="Subscription_16" Type="int" />
+    <Property Name="Subscription_36" Type="int" />
+    <Property Name="DateTimeRec" Type="datetime" Nullable="false" />
+    <Property Name="LoginRec" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriceHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="PriceId" Type="int" Nullable="false" />
+    <Property Name="LoginRec" Type="int" Nullable="false" />
+    <Property Name="DateTimeRec" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DataTimeRec" Type="datetime" Nullable="false" />
+    <Property Name="DataTimePay" Type="datetime" Nullable="false" />
+    <Property Name="PeopleId" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="Value" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="LoginRecId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Выступления">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Дата" Type="datetime" Nullable="false" />
+    <Property Name="ФИО" Type="int" Nullable="false" />
+    <Property Name="Название мероприятия" Type="int" Nullable="false" />
+    <Property Name="Идет" Type="bit" Nullable="false" />
+    <Property Name="Транспорт" Type="int" />
+    <Property Name="Примечание" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Имена преподавателей">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" />
+    <Property Name="Visible" Type="bit" />
+  </EntityType>
+  <EntityType Name="Календарь занятий">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="DayOfWeek" Type="ntext" Nullable="false" />
+    <Property Name="DataRec" Type="datetime" Nullable="false" />
+    <Property Name="LoginRec" Type="int" Nullable="false" />
+    <Property Name="upsize_ts" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Контактные лица">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название организации" Type="int" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="255" />
+    <Property Name="Телефон" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Контакты">
+    <Key>
+      <PropertyRef Name="ИД" />
+    </Key>
+    <Property Name="ИД" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Организация" Type="nvarchar" MaxLength="50" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" />
+    <Property Name="Адрес электронной почты" Type="nvarchar" MaxLength="50" />
+    <Property Name="Должность" Type="nvarchar" MaxLength="50" />
+    <Property Name="Рабочий телефон" Type="nvarchar" MaxLength="25" />
+    <Property Name="Домашний телефон" Type="nvarchar" MaxLength="25" />
+    <Property Name="Мобильный телефон" Type="nvarchar" MaxLength="25" />
+    <Property Name="Номер факса" Type="nvarchar" MaxLength="25" />
+    <Property Name="Адрес" Type="ntext" />
+    <Property Name="Город" Type="nvarchar" MaxLength="50" />
+    <Property Name="Область, край" Type="nvarchar" MaxLength="50" />
+    <Property Name="Индекс" Type="nvarchar" MaxLength="15" />
+    <Property Name="Страна или регион" Type="nvarchar" MaxLength="50" />
+    <Property Name="Веб-страница" Type="ntext" />
+    <Property Name="Заметки" Type="ntext" />
+    <Property Name="Вложения" Type="ntext" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Мероприятия">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Дата" Type="datetime" Nullable="false" />
+    <Property Name="ФИО" Type="int" Nullable="false" />
+    <Property Name="Название мероприятия" Type="int" Nullable="false" />
+    <Property Name="Проживание" Type="money" />
+    <Property Name="Питание" Type="money" />
+    <Property Name="Оплатил" Type="money" />
+    <Property Name="Остаток" Type="money" />
+    <Property Name="Идет" Type="bit" Nullable="false" />
+    <Property Name="Транспорт" Type="int" />
+    <Property Name="Примечание" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Название SMS">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SMS" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Название мероприятий">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Мероприятие" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Примечание" Type="text" />
+    <Property Name="DataRec" Type="datetime" Nullable="false" />
+    <Property Name="LiginRecId" Type="int" Nullable="false" />
+    <Property Name="Close" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Название месяцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Месяц" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Название напитков">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название напитков" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Название района">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название района" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Название школ">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Школы" Type="nvarchar" MaxLength="255" />
+    <Property Name="Visible" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Названия танцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название танца" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="DateTimeRec" Type="datetime" />
+    <Property Name="LoginRec" Type="int" />
+  </EntityType>
+  <EntityType Name="Наличие авто">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ФИО" Type="int" />
+  </EntityType>
+  <EntityType Name="Оплата">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Дата оплаты" Type="datetime" Nullable="false" />
+    <Property Name="Код_Ученика" Type="int" Nullable="false" />
+    <Property Name="Месяц" Type="int" Nullable="false" />
+    <Property Name="Сумма" Type="int" Nullable="false" />
+    <Property Name="Примечание" Type="nvarchar" MaxLength="255" />
+    <Property Name="Преподаватель" Type="int" Nullable="false" />
+    <Property Name="Название танца" Type="int" Nullable="false" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="LoginRecId" Type="int" Nullable="false" />
+    <Property Name="DateTimeRec" Type="datetime" />
+    <Property Name="Visits" Type="int" />
+  </EntityType>
+  <EntityType Name="Организации">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название организации" Type="nvarchar" MaxLength="255" />
+    <Property Name="Адрес" Type="nvarchar" MaxLength="255" />
+    <Property Name="Скидка" Type="int" />
+  </EntityType>
+  <EntityType Name="Списки людей">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Дата регистрации" Type="datetime" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="20" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="15" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="20" />
+    <Property Name="Дата рождения" Type="datetime" />
+    <Property Name="Район" Type="int" />
+    <Property Name="Телефон" Type="nvarchar" MaxLength="10" />
+    <Property Name="SMS" Type="int" Nullable="false" />
+    <Property Name="e-mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Вконтекте" Type="bit" Nullable="false" />
+    <Property Name="От куда узнал(а)" Type="nvarchar" MaxLength="255" />
+    <Property Name="Хобби" Type="nvarchar" MaxLength="255" />
+    <Property Name="Участие в выступлениях" Type="bit" Nullable="false" />
+    <Property Name="Примечание" Type="nvarchar" MaxLength="255" />
+    <Property Name="Школы" Type="int" />
+    <Property Name="Пол" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Выбыл из школы" Type="bit" Nullable="false" />
+    <Property Name="Кого привел" Type="nvarchar" MaxLength="255" />
+    <Property Name="Дата выбытия" Type="datetime" />
+    <Property Name="Не печатать" Type="bit" Nullable="false" />
+    <Property Name="Кто привел" Type="int" />
+    <Property Name="Студент" Type="bit" Nullable="false" />
+    <Property Name="Семейная пара" Type="int" />
+    <Property Name="Наличие авто" Type="bit" Nullable="false" />
+    <Property Name="upsize_ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoginRecId" Type="int" Nullable="false" />
+    <Property Name="DateTimeRec" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Список дат">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Дата" Type="datetime" />
+    <Property Name="Месяц" Type="smallint" />
+    <Property Name="Год" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Список лет">
+    <Key>
+      <PropertyRef Name="Год" />
+    </Key>
+    <Property Name="Год" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Список месяцев">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Месяц" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="СписокНаМероприятие">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PeopleId" Type="int" Nullable="false" />
+    <Property Name="МероприятеID" Type="int" Nullable="false" />
+    <Property Name="Avto" Type="bit" Nullable="false" />
+    <Property Name="Pay" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Ok" Type="bit" Nullable="false" />
+    <Property Name="DataTimeCreate" Type="datetime" Nullable="false" />
+    <Property Name="LiginRecId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ТБ Домики">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название организации" Type="int" />
+    <Property Name="Кол-во мест" Type="int" />
+    <Property Name="Организация" Type="int" />
+  </EntityType>
+  <EntityType Name="Цены">
+    <Key>
+      <PropertyRef Name="Код" />
+    </Key>
+    <Property Name="Код" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Название организации" Type="int" />
+    <Property Name="№ домика" Type="nvarchar" MaxLength="255" />
+    <Property Name="Цена" Type="money" />
+  </EntityType>
+  <Association Name="FK_Administrators_Названия танцев">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="Administrators" Type="Store.Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="Название_танца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Administrators_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Administrators" Type="Store.Administrators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Administrators">
+        <PropertyRef Name="Код_Ученика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_CashCategory">
+    <End Role="CashCategory" Type="Store.CashCategory" Multiplicity="1" />
+    <End Role="Cash" Type="Store.Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CashCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_Названия танцев">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="Cash" Type="Store.Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cash_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Cash" Type="Store.Cash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Cash">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CashCategory_CashCategory">
+    <End Role="CashCategory" Type="Store.CashCategory" Multiplicity="1" />
+    <End Role="CashCategory1" Type="Store.CashCategory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="CashCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CashCategory1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_NotesCategory">
+    <End Role="NotesCategory" Type="Store.NotesCategory" Multiplicity="1" />
+    <End Role="Notes" Type="Store.Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NotesCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="IdCategoryNotes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Notes_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Notes" Type="Store.Notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Notes">
+        <PropertyRef Name="КодУченика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotesCategory_NotesCategory1">
+    <End Role="NotesCategory" Type="Store.NotesCategory" Multiplicity="1" />
+    <End Role="NotesCategory1" Type="Store.NotesCategory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="NotesCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NotesCategory1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceHistory_Price">
+    <End Role="Price" Type="Store.Price" Multiplicity="1" />
+    <End Role="PriceHistory" Type="Store.PriceHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Price">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PriceHistory">
+        <PropertyRef Name="PriceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PriceHistory_Названия танцев">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="PriceHistory" Type="Store.PriceHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="PriceHistory">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sms">
+    <End Role="Название SMS" Type="Store.Название SMS" Multiplicity="1" />
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название SMS">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки людей">
+        <PropertyRef Name="SMS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Названия танцев">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="Visits" Type="Store.Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visits_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Visits" Type="Store.Visits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Visits">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Имена_Преподавателей">
+    <End Role="Имена преподавателей" Type="Store.Имена преподавателей" Multiplicity="1" />
+    <End Role="Оплата" Type="Store.Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Имена преподавателей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Преподаватель" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Календарь занятий_Названия танцев">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="Календарь занятий" Type="Store.Календарь занятий" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Календарь занятий">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Название_месяцев">
+    <End Role="Название месяцев" Type="Store.Название месяцев" Multiplicity="1" />
+    <End Role="Оплата" Type="Store.Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название месяцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Месяц" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Название_танцев_Оплата">
+    <End Role="Названия танцев" Type="Store.Названия танцев" Multiplicity="1" />
+    <End Role="Оплата" Type="Store.Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Названия танцев">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Название танца" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Оплата_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Оплата" Type="Store.Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="Код_Ученика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Оплата_Списки людей_Login">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="Оплата" Type="Store.Оплата" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Оплата">
+        <PropertyRef Name="LoginRecId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокНаМероприятие_Название мероприятий">
+    <End Role="Название мероприятий" Type="Store.Название мероприятий" Multiplicity="1" />
+    <End Role="СписокНаМероприятие" Type="Store.СписокНаМероприятие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название мероприятий">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="СписокНаМероприятие">
+        <PropertyRef Name="МероприятеID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокНаМероприятие_Списки людей">
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="1" />
+    <End Role="СписокНаМероприятие" Type="Store.СписокНаМероприятие" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Списки людей">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="СписокНаМероприятие">
+        <PropertyRef Name="PeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK03_Районы">
+    <End Role="Название района" Type="Store.Название района" Multiplicity="0..1" />
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название района">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки людей">
+        <PropertyRef Name="Район" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK04_Школы">
+    <End Role="Название школ" Type="Store.Название школ" Multiplicity="0..1" />
+    <End Role="Списки людей" Type="Store.Списки людей" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Название школ">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Списки людей">
+        <PropertyRef Name="Школы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Контактные лица_FK00">
+    <End Role="Организации" Type="Store.Организации" Multiplicity="0..1" />
+    <End Role="Контактные лица" Type="Store.Контактные лица" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Организации">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Контактные лица">
+        <PropertyRef Name="Название организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Мероприятия_FK01">
+    <End Role="Наличие авто" Type="Store.Наличие авто" Multiplicity="0..1" />
+    <End Role="Мероприятия" Type="Store.Мероприятия" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Наличие авто">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Мероприятия">
+        <PropertyRef Name="Транспорт" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Цены_FK00">
+    <End Role="Организации" Type="Store.Организации" Multiplicity="0..1" />
+    <End Role="Цены" Type="Store.Цены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Организации">
+        <PropertyRef Name="Код" />
+      </Principal>
+      <Dependent Role="Цены">
+        <PropertyRef Name="Название организации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

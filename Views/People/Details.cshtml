@@ -1,0 +1,230 @@
+﻿@using CuatroCaminosMvcApplication
+@model CuatroCaminosMvcApplication.Models.Списки_людей
+
+@{
+    ViewBag.Title = "Карточка клиента";
+}
+
+@if (Model != null)
+{
+    <h2> Карточка клиента: @Model.ФИО </h2>
+
+    <p>
+        @Html.ActionLink("Назад к списку", "Index") | 
+
+        @Html.ActionLink("Создать нового", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                Дата регистрации <hr/>
+                Дата рождения
+            </th>
+            <th>
+                Фамилия<br/>
+                Имя<br/>
+                Отчество<br/>
+            
+            </th>
+            <th nowrap="nowrap">
+                Вконтекте:       <br/>
+                Выступления:     <br/>
+                Наличие авто:    <br/>
+            </th>
+            <th>
+                От куда узнал
+            </th>
+            <th>
+                Хобби
+            </th>
+            <th>
+                Примечание
+            </th>
+            <th>
+                Выбыл из школы
+            </th>
+        </tr>
+
+        <tr>
+            <td>    
+                @Html.DisplayFor(model => model.Дата_регистрации) <hr/>
+                @Html.DisplayFor(model => model.Дата_рождения)
+            </td>
+            <td>
+                <b> @Html.DisplayFor(model => model.Фамилия)     <br/>
+                    @Html.DisplayFor(model => model.Имя)
+                </b>                                                 <br/>
+                @Html.DisplayFor(model => model.Отчество)     <br/>  
+
+           
+                <br/>
+                Телефон: 
+                        
+               
+                @if (!String.IsNullOrEmpty(Model.Телефон))
+                {
+
+
+                    if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора 
+//                        ||            HttpContext.Current.User.Identity.Name == "9608735873" 
+//                        ||            HttpContext.Current.User.Identity.Name == "zlata"
+                        )
+                    {
+
+                        @:+7 @Html.DisplayFor(model => model.Телефон)
+
+                    }
+                    else
+                    {
+                        @: номер скрыт
+                    }
+
+                }
+                else
+                {
+                    @: нет номера
+                }
+
+                <br/>
+                <br/>                                                             
+
+
+                Район: @Html.DisplayFor(model => model.Название_района.Название_района1) <br/>
+                <br/>
+                    @if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+                    {
+                        @:   e - mail:
+                        @Html.DisplayFor(model => model.e_mail)
+                    }
+                    else
+                    {
+                         @: email скрыт
+                    }
+                    
+                    <br/>
+                sms:    @Html.DisplayFor(model => model.Название_SMS.SMS)    <br/>
+                <br/>
+                Школа:  @Html.DisplayFor(model => model.Название_школ.Школы)
+                <br/>
+                        
+            </td>
+            <td>
+                Вконтекте: @Html.DisplayFor(model => model.Вконтекте)               <br/>
+                Выступл-я: @Html.DisplayFor(model => model.Участие_в_выступлениях)  <br/>
+                Авто: @Html.DisplayFor(model => model.Наличие_авто)            <br/>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.От_куда_узнал_а_)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Хобби)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Примечание)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Выбыл_из_школы)<br/>
+                @Html.DisplayFor(model => model.Дата_выбытия)
+            </td>
+        </tr>
+
+    </table>
+    
+   <p>
+            
+            <hr/>
+
+            <div class="display-label">Время внесения записи</div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DateTimeRec)
+            </div>
+
+            <div class="display-label">Кто записал запись</div>
+            <div class="display-field">
+                @ViewBag.LoginRecFio
+            </div>
+           <br/>
+    <hr/>
+
+
+        </p>
+    
+    <p>
+        @if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+        {
+            @Html.ActionLink("Редактировать", "Edit", new { id = Model.Код })
+            @: |
+            @Html.ActionLink("Удалить данную запись", "Delete", new { id = Model.Код })
+            @: |
+        }
+
+    </p>
+
+    <br/>
+    <br/>
+    <hr/>
+    <h2> Вся информация по оплате: @Model.ФИ</h2>
+    <p>
+
+        @if (Model.Код != 151)
+        {
+            @Html.Action("PartialОплата", "Payment")
+        }    
+    
+    </p>
+
+    <br/>
+    <hr/>
+
+    
+    <h2>Участие в мероприятиях: @Model.ФИ</h2>
+    <p>
+        @Html.Action("ListActivityDetailsFromPeopleId", "Activity", new { idPeaple = Model.Код })
+    </p>
+    
+        <br/>
+    <hr/>
+
+    
+    
+        <h2> Заметки: @Model.ФИ</h2>
+
+        if (Model.Код != 151)
+        {
+
+        <p>    
+            @Html.Action("NotesList", "People") 
+    
+            <br/><br/>
+    
+            @Html.Action("NotesCreate", "People") 
+
+    
+        </p>
+
+        }
+        else
+        {
+        <h4>Произошла ошибка. </h4>
+        }
+
+    <br/>
+    <hr/>
+
+
+    
+
+    
+    
+    
+        
+    
+    
+    <p>
+        @Html.ActionLink("Назад к списку", "Index") | 
+
+        @Html.ActionLink("Создать нового", "Create")
+    </p>
+
+    
+}

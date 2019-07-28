@@ -1,0 +1,84 @@
+﻿@using CuatroCaminosMvcApplication
+@model CuatroCaminosMvcApplication.Models.Название_мероприятий
+
+@{
+    ViewBag.Title = "Редактирование мероприятия: " + Model.Мероприятие;
+}
+
+<h2>Редактирование мероприятия: @Model.Мероприятие</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Название мероприятий</legend>
+
+        @Html.HiddenFor(model => model.Код)
+
+
+        @{ViewBag.Дата = Model.Date;}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Мероприятие)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Мероприятие)
+            @Html.ValidationMessageFor(model => model.Мероприятие)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Примечание)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Примечание, 20, 100, null)
+            @Html.ValidationMessageFor(model => model.Примечание)
+        </div>
+@*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataRec)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataRec)
+            @Html.ValidationMessageFor(model => model.DataRec)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LiginRecId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LiginRecId)
+            @Html.ValidationMessageFor(model => model.LiginRecId)
+        </div>
+
+*@   
+
+@if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+{
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Close)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Close)
+        @Html.ValidationMessageFor(model => model.Close)
+    </div>
+}
+
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,61 @@
+﻿@using System.Collections
+
+@{
+    IEnumerable<CuatroCaminosMvcApplication.Models.List_BirthDay> D = ViewBag.BirthDays;
+}
+    
+@if (D.Any()){
+
+    
+<table>
+    <tr>
+        <th>
+            Имя
+        </th>
+        <th>
+            День рождения
+        </th>
+    </tr>
+@foreach (var item in D)
+{
+    <tr>
+        <td>
+
+@{
+    if (item.Day >= DateTime.Now.Date.Day && item.Day <= (DateTime.Now.Day+3))
+    {
+        <b>
+            @Html.ActionLink(item.Names, "Details", "People", new { id = item.Id }, new { target = "_blank" })
+        </b>
+        
+            @:</td>
+            @:<td>
+        <strong><span style="color: #ff0000;">
+            @Html.DisplayFor(modelItem => item.Birthday)
+            </span>
+        </strong>
+
+    }
+    else
+    {
+        
+            @Html.ActionLink(item.Names, "Details", "People", new { id = item.Id }, new { target = "_blank" })
+            @:</td>
+            @:<td>
+        
+        @Html.DisplayFor(modelItem => item.Birthday)
+
+    }
+        
+}        
+        </td>
+    </tr>
+}
+
+</table>
+    <p align="center">
+    cегодня:
+                 @DateTime.Now.Date.ToString("d")
+    </p>
+
+    }

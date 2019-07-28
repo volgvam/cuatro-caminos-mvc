@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>@ViewBag.Title</title>
+	@*<meta name="copyright" content="© 2011" />
+	<meta name="Robots" content="all" />
+	<meta name="document-state" content="dynamic" />
+	<meta name="revisit" content="7 days" />
+	<meta name="revisit-after" content="7 days" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta name="description" content="описание сайта" />
+	<meta name="keywords" content="ключевые слова сайта" />
+	<link rel="Shortcut Icon" href="@Url.Content("~/favicon.ico")" />*@
+	<link href="@Url.Content("/Content/Site.css")" rel="stylesheet" type="text/css" />
+	@*<link href="@Url.Content("/Content/themes/jquery-ui-1.8.21.custom.css")" rel="stylesheet" type="text/css" />*@
+	@RenderSection("header", false)
+</head>
+<body>
+	<div class="page">
+		<header>
+			<div id="title">
+				<h1>Заголовок</h1>
+			</div>
+			<div id="logindisplay">
+			@Html.Partial("_LogOnPartial")
+		</div>
+			<nav>
+				<ul id="menu">
+					<li>@Html.ActionLink("Главная", "index", "home")</li>
+					<li>@Html.ActionLink("О проекте", "about", "home")</li>
+				</ul>
+			</nav>
+		</header>
+		<div id="main">
+			@RenderBody()
+		</div>
+		<footer>все права защищены @( DateTime.Now.Year.ToString())	© компания<br/>
+			программирование <a href="#">название компания</a></footer>
+	</div>
+	@Content.Scripts("jquery-1.7.2.min.js", Url)
+	@Content.Scripts("jquery.unobtrusive-ajax.min.js", Url)
+	@Content.Scripts("modernizr-2.5.3.js", Url)
+	@*@Content.Scripts("jquery-ui-1.8.21.custom.min.js", Url)*@
+	@RenderSection("scripts", false)
+	@Html.WriteScriptBlocks()
+</body>
+</html>

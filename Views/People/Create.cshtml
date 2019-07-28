@@ -1,0 +1,481 @@
+﻿@model CuatroCaminosMvcApplication.Models.Списки_людей
+
+@{
+    ViewBag.Title = "Добвление нового клиента";
+}
+
+<h2>Добавление нового клиента</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>форма добавления</legend>
+
+
+<div class="birthday">
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Вконтекте) @Html.LabelFor(model => model.Вконтекте) @Html.ValidationMessageFor(model => model.Вконтекте)
+        </div>
+
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Участие_в_выступлениях) @Html.LabelFor(model => model.Участие_в_выступлениях) @Html.ValidationMessageFor(model => model.Участие_в_выступлениях)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Наличие_авто) @Html.LabelFor(model => model.Наличие_авто) @Html.ValidationMessageFor(model => model.Наличие_авто)
+        </div>
+
+
+<hr />
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Выбыл_из_школы)
+
+            @Html.LabelFor(model => model.Выбыл_из_школы)
+            @Html.ValidationMessageFor(model => model.Выбыл_из_школы)
+        </div>
+
+
+        <div class="editor-field">
+            @Html.LabelFor(model => model.Дата_выбытия)
+
+            @Html.EditorFor(model => model.Дата_выбытия)
+            @Html.ValidationMessageFor(model => model.Дата_выбытия)
+        </div>
+
+</div>
+
+
+
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_регистрации)
+        </div>
+        <div class="editor-field">
+
+            @Html.EditorFor(model => model.Дата_регистрации)
+            @Html.ValidationMessageFor(model => model.Дата_регистрации)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Фамилия)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Фамилия)
+            @Html.ValidationMessageFor(model => model.Фамилия)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Имя)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Имя)
+            @Html.ValidationMessageFor(model => model.Имя)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Отчество)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Отчество)
+            @Html.ValidationMessageFor(model => model.Отчество)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_рождения)
+        </div>
+        <div class="editor-field">
+
+            @Html.EditorFor(model => model.Дата_рождения)
+            @Html.ValidationMessageFor(model => model.Дата_рождения)
+        </div>
+
+
+           @{ViewBag.selectList = ViewBag._Район;}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Район)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Район)
+            @Html.ValidationMessageFor(model => model.Район)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Телефон)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Телефон)
+            @Html.ValidationMessageFor(model => model.Телефон)
+
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._Название_SMS;}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS)
+            @Html.ValidationMessageFor(model => model.SMS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.e_mail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.e_mail)
+            @Html.ValidationMessageFor(model => model.e_mail)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.От_куда_узнал_а_)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.От_куда_узнал_а_)
+            @Html.ValidationMessageFor(model => model.От_куда_узнал_а_)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Хобби)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Хобби)
+            @Html.ValidationMessageFor(model => model.Хобби)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Примечание)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Примечание)
+            @Html.ValidationMessageFor(model => model.Примечание)
+        </div>
+
+         @{ViewBag.selectList = ViewBag._Пол;}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Пол)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Пол)
+            @Html.ValidationMessageFor(model => model.Пол)
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._Школы;}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Школы)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Школы)
+            @Html.ValidationMessageFor(model => model.Школы)
+        </div>
+
+
+
+
+@*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Напитки)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Напитки)
+            @Html.ValidationMessageFor(model => model.Напитки)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Кого_привел)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Кого_привел)
+            @Html.ValidationMessageFor(model => model.Кого_привел)
+        </div>
+*@
+@*
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Кто_привел)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Кто_привел)
+            @Html.ValidationMessageFor(model => model.Кто_привел)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Переведен_в_группу)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Переведен_в_группу)
+            @Html.ValidationMessageFor(model => model.Переведен_в_группу)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Студент)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Студент)
+            @Html.ValidationMessageFor(model => model.Студент)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Семейная_пара)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Семейная_пара)
+            @Html.ValidationMessageFor(model => model.Семейная_пара)
+        </div>
+*@
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+
+
+
+@*        @Html.HiddenFor(model => model.Код)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_регистрации)
+        </div>
+        <div class="editor-field">
+            @{ViewBag.Дата = DateTime.Now.Date;} 
+
+            @Html.EditorFor(model => model.Дата_регистрации)
+            @Html.ValidationMessageFor(model => model.Дата_регистрации)
+        </div>
+
+            @{ViewBag.Дата = null;} 
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Фамилия)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Фамилия)
+            @Html.ValidationMessageFor(model => model.Фамилия)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Имя)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Имя)
+            @Html.ValidationMessageFor(model => model.Имя)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Отчество)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Отчество)
+            @Html.ValidationMessageFor(model => model.Отчество)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_рождения)
+        </div>
+        <div class="editor-field">
+ 
+            @Html.EditorFor(model => model.Дата_рождения)
+            @Html.ValidationMessageFor(model => model.Дата_рождения)
+        </div>
+
+
+           @{ViewBag.selectList = ViewBag._Район;}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Район)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Район)
+            @Html.ValidationMessageFor(model => model.Район)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Телефон)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Телефон)
+            @Html.ValidationMessageFor(model => model.Телефон)
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._Название_SMS;}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SMS)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SMS)
+            @Html.ValidationMessageFor(model => model.SMS)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.e_mail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.e_mail)
+            @Html.ValidationMessageFor(model => model.e_mail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Вконтекте)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Вконтекте)
+            @Html.ValidationMessageFor(model => model.Вконтекте)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.От_куда_узнал_а_)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.От_куда_узнал_а_)
+            @Html.ValidationMessageFor(model => model.От_куда_узнал_а_)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Хобби)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Хобби)
+            @Html.ValidationMessageFor(model => model.Хобби)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Участие_в_выступлениях)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Участие_в_выступлениях)
+            @Html.ValidationMessageFor(model => model.Участие_в_выступлениях)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Примечание)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Примечание)
+            @Html.ValidationMessageFor(model => model.Примечание)
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._Школы;}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Школы)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Школы)
+            @Html.ValidationMessageFor(model => model.Школы)
+        </div>
+
+
+            @{ViewBag.selectList = ViewBag._Пол;}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Пол)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Пол)
+            @Html.ValidationMessageFor(model => model.Пол)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Выбыл_из_школы)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Выбыл_из_школы)
+            @Html.ValidationMessageFor(model => model.Выбыл_из_школы)
+        </div>
+@*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Напитки)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Напитки)
+            @Html.ValidationMessageFor(model => model.Напитки)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Кого_привел)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Кого_привел)
+            @Html.ValidationMessageFor(model => model.Кого_привел)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_выбытия)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Дата_выбытия)
+            @Html.ValidationMessageFor(model => model.Дата_выбытия)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Кто_привел)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Кто_привел)
+            @Html.ValidationMessageFor(model => model.Кто_привел)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Переведен_в_группу)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Переведен_в_группу)
+            @Html.ValidationMessageFor(model => model.Переведен_в_группу)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Студент)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Студент)
+            @Html.ValidationMessageFor(model => model.Студент)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Семейная_пара)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Семейная_пара)
+            @Html.ValidationMessageFor(model => model.Семейная_пара)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Наличие_авто)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Наличие_авто)
+            @Html.ValidationMessageFor(model => model.Наличие_авто)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+*@
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

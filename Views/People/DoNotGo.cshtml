@@ -1,0 +1,55 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@{
+    ViewBag.Title = "Список людей, переставших ходить на занятия";
+}
+
+<h2>Список людей, переставших ходить на занятия:  @ViewBag.Имя_группы</h2>
+
+<ul>Расчитывается по оплатившим относительно сегодняшнего дня.</ul>
+<p>
+@Html.ActionLink("Назад к списку", "Index") | 
+
+@if (ViewBag.Имя_группы!= null){
+
+    @Html.ActionLink("Посмотреть оплату за текущий месяц", "Month", "Payment", new { month = DateTime.Now.Month, gruppa = Request.QueryString["Group"]},  new { style = "color: red" }) 
+    @:|
+}
+
+</p>
+
+
+
+<table style="border:none;">
+<tr>
+<td style="vertical-align: text-top; border:0">
+
+@{
+    
+    foreach (var название_танцев in ViewBag.Название_танцев as IList<Названия_танцев>)
+    {
+        
+    <br/><strong>
+                @Html.ActionLink(название_танцев.Название_танца, "Group", new {Group = название_танцев.Код, Sex = Request.QueryString["Sex"], Pay = Request.QueryString["Pay"]})
+        </strong>
+
+                foreach (var day in ViewBag.Days as Dictionary<int, string>)
+        {
+            <li>
+                    @Html.ActionLink(day.Value, "DoNotGo", new { Group = название_танцев.Код, day = day.Key })
+            
+        </li>
+        }
+    }
+}
+
+
+</td>
+<td  style="vertical-align: text-top; width:80%; border:0">@Html.Partial("_PartialIndex")</td>
+
+</tr>
+</table>
+<div>
+<ul>
+
+</ul>
+</div>

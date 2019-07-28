@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+
+
+<h2>Касса</h2>
+
+<p>
+    @Html.ActionLink("Внести оплату в кассу", "Create") |
+    @Html.ActionLink("Проверка оплаты", "CashAndPay") 
+
+</p>
+
+<div id="target">
+    @Html.Action("IndexPartial")
+</div>
+

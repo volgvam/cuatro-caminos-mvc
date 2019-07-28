@@ -1,0 +1,28 @@
+﻿@model  CuatroCaminosMvcApplication.Models.Administrators
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+<fieldset>
+    <legend>Administrators</legend>
+
+    <div class="display-label">ФИО</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Списки_людей.ФИО)
+    </div>
+
+    <div class="display-label">Доступ к танцу</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Названия_танцев.Название_танца)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

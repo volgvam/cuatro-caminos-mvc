@@ -1,0 +1,16 @@
+@using System.Web.Mvc;
+@helper Scripts(string scriptName, UrlHelper url, string folder = "Scripts")
+	{
+	<script src="@url.Content(string.Concat("~/", folder, "/", scriptName))" type="text/javascript"></script>
+}
+@helper TableHeader(params  string[] headName)
+	{     
+	<tr>
+		@for (int i = 0; i < headName.Length; i++)
+  {             
+			<th>
+				@headName.GetValue(i).ToString()
+			</th>          
+  }
+	</tr>  
+}

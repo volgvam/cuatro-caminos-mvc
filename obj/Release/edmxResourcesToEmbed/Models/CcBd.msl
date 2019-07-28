@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="Cuatro_Caminos_BDEntities">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Administrators">
+        <MappingFragment StoreEntitySet="Administrators">
+          <ScalarProperty Name="Название_танца" ColumnName="Название_танца" />
+          <ScalarProperty Name="Код_Ученика" ColumnName="Код_Ученика" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cash">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Cash">
+        <MappingFragment StoreEntitySet="Cash">
+          <ScalarProperty Name="Payment_expenses" ColumnName="Payment_expenses" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="LoginRecId" ColumnName="LoginRecId" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="PeopleId" ColumnName="PeopleId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="DataTimePay" ColumnName="DataTimePay" />
+          <ScalarProperty Name="DataTimeCreate" ColumnName="DataTimeCreate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CashCategory">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.CashCategory">
+        <MappingFragment StoreEntitySet="CashCategory">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notes">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Notes">
+        <MappingFragment StoreEntitySet="Notes">
+          <ScalarProperty Name="LoginRecId" ColumnName="LoginRecId" />
+          <ScalarProperty Name="IdCategoryNotes" ColumnName="IdCategoryNotes" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DatePlan" ColumnName="DatePlan" />
+          <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
+          <ScalarProperty Name="КодУченика" ColumnName="КодУченика" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotesCategory">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.NotesCategory">
+        <MappingFragment StoreEntitySet="NotesCategory">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Price">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Price">
+        <MappingFragment StoreEntitySet="Price">
+          <ScalarProperty Name="LoginRec" ColumnName="LoginRec" />
+          <ScalarProperty Name="DateTimeRec" ColumnName="DateTimeRec" />
+          <ScalarProperty Name="Subscription_36" ColumnName="Subscription_36" />
+          <ScalarProperty Name="Subscription_16" ColumnName="Subscription_16" />
+          <ScalarProperty Name="Subscription_4" ColumnName="Subscription_4" />
+          <ScalarProperty Name="Subscription_8" ColumnName="Subscription_8" />
+          <ScalarProperty Name="Single" ColumnName="Single" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceHistory">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.PriceHistory">
+        <MappingFragment StoreEntitySet="PriceHistory">
+          <ScalarProperty Name="DateTimeRec" ColumnName="DateTimeRec" />
+          <ScalarProperty Name="LoginRec" ColumnName="LoginRec" />
+          <ScalarProperty Name="PriceId" ColumnName="PriceId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visits">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Visits">
+        <MappingFragment StoreEntitySet="Visits">
+          <ScalarProperty Name="LoginRecId" ColumnName="LoginRecId" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="PeopleId" ColumnName="PeopleId" />
+          <ScalarProperty Name="DataTimePay" ColumnName="DataTimePay" />
+          <ScalarProperty Name="DataTimeRec" ColumnName="DataTimeRec" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Выступления">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Выступления">
+        <MappingFragment StoreEntitySet="Выступления">
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Транспорт" ColumnName="Транспорт" />
+          <ScalarProperty Name="Идет" ColumnName="Идет" />
+          <ScalarProperty Name="Название_мероприятия" ColumnName="Название мероприятия" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Имена_преподавателей">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Имена_преподавателей">
+        <MappingFragment StoreEntitySet="Имена преподавателей">
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Календарь_занятий">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Календарь_занятий">
+        <MappingFragment StoreEntitySet="Календарь занятий">
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+          <ScalarProperty Name="LoginRec" ColumnName="LoginRec" />
+          <ScalarProperty Name="DataRec" ColumnName="DataRec" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Контактные_лица">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Контактные_лица">
+        <MappingFragment StoreEntitySet="Контактные лица">
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Название_организации" ColumnName="Название организации" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Контакты">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Контакты">
+        <MappingFragment StoreEntitySet="Контакты">
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+          <ScalarProperty Name="Вложения" ColumnName="Вложения" />
+          <ScalarProperty Name="Заметки" ColumnName="Заметки" />
+          <ScalarProperty Name="Веб_страница" ColumnName="Веб-страница" />
+          <ScalarProperty Name="Страна_или_регион" ColumnName="Страна или регион" />
+          <ScalarProperty Name="Индекс" ColumnName="Индекс" />
+          <ScalarProperty Name="Область__край" ColumnName="Область, край" />
+          <ScalarProperty Name="Город" ColumnName="Город" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Номер_факса" ColumnName="Номер факса" />
+          <ScalarProperty Name="Мобильный_телефон" ColumnName="Мобильный телефон" />
+          <ScalarProperty Name="Домашний_телефон" ColumnName="Домашний телефон" />
+          <ScalarProperty Name="Рабочий_телефон" ColumnName="Рабочий телефон" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+          <ScalarProperty Name="Адрес_электронной_почты" ColumnName="Адрес электронной почты" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Организация" ColumnName="Организация" />
+          <ScalarProperty Name="ИД" ColumnName="ИД" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Мероприятия">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Мероприятия">
+        <MappingFragment StoreEntitySet="Мероприятия">
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Транспорт" ColumnName="Транспорт" />
+          <ScalarProperty Name="Идет" ColumnName="Идет" />
+          <ScalarProperty Name="Остаток" ColumnName="Остаток" />
+          <ScalarProperty Name="Оплатил" ColumnName="Оплатил" />
+          <ScalarProperty Name="Питание" ColumnName="Питание" />
+          <ScalarProperty Name="Проживание" ColumnName="Проживание" />
+          <ScalarProperty Name="Название_мероприятия" ColumnName="Название мероприятия" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_SMS">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_SMS">
+        <MappingFragment StoreEntitySet="Название SMS">
+          <ScalarProperty Name="SMS" ColumnName="SMS" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_мероприятий">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_мероприятий">
+        <MappingFragment StoreEntitySet="Название мероприятий">
+          <ScalarProperty Name="Close" ColumnName="Close" />
+          <ScalarProperty Name="LiginRecId" ColumnName="LiginRecId" />
+          <ScalarProperty Name="DataRec" ColumnName="DataRec" />
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Мероприятие" ColumnName="Мероприятие" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_месяцев">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_месяцев">
+        <MappingFragment StoreEntitySet="Название месяцев">
+          <ScalarProperty Name="Месяц" ColumnName="Месяц" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_напитков">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_напитков">
+        <MappingFragment StoreEntitySet="Название напитков">
+          <ScalarProperty Name="Название_напитков1" ColumnName="Название напитков" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_района">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_района">
+        <MappingFragment StoreEntitySet="Название района">
+          <ScalarProperty Name="Название_района1" ColumnName="Название района" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Название_школ">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Название_школ">
+        <MappingFragment StoreEntitySet="Название школ">
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Школы" ColumnName="Школы" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Названия_танцев">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Названия_танцев">
+        <MappingFragment StoreEntitySet="Названия танцев">
+          <ScalarProperty Name="LoginRec" ColumnName="LoginRec" />
+          <ScalarProperty Name="DateTimeRec" ColumnName="DateTimeRec" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Название_танца" ColumnName="Название танца" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Наличие_авто">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Наличие_авто">
+        <MappingFragment StoreEntitySet="Наличие авто">
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Оплата">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Оплата">
+        <MappingFragment StoreEntitySet="Оплата">
+          <ScalarProperty Name="Visits" ColumnName="Visits" />
+          <ScalarProperty Name="DateTimeRec" ColumnName="DateTimeRec" />
+          <ScalarProperty Name="LoginRecId" ColumnName="LoginRecId" />
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+          <ScalarProperty Name="Название_танца" ColumnName="Название танца" />
+          <ScalarProperty Name="Преподаватель" ColumnName="Преподаватель" />
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Сумма" ColumnName="Сумма" />
+          <ScalarProperty Name="Месяц" ColumnName="Месяц" />
+          <ScalarProperty Name="Код_Ученика" ColumnName="Код_Ученика" />
+          <ScalarProperty Name="Дата_оплаты" ColumnName="Дата оплаты" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Организации">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Организации">
+        <MappingFragment StoreEntitySet="Организации">
+          <ScalarProperty Name="Скидка" ColumnName="Скидка" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Название_организации" ColumnName="Название организации" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Списки_людей">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Списки_людей">
+        <MappingFragment StoreEntitySet="Списки людей">
+          <ScalarProperty Name="DateTimeRec" ColumnName="DateTimeRec" />
+          <ScalarProperty Name="LoginRecId" ColumnName="LoginRecId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+          <ScalarProperty Name="Наличие_авто" ColumnName="Наличие авто" />
+          <ScalarProperty Name="Семейная_пара" ColumnName="Семейная пара" />
+          <ScalarProperty Name="Студент" ColumnName="Студент" />
+          <ScalarProperty Name="Кто_привел" ColumnName="Кто привел" />
+          <ScalarProperty Name="Не_печатать" ColumnName="Не печатать" />
+          <ScalarProperty Name="Дата_выбытия" ColumnName="Дата выбытия" />
+          <ScalarProperty Name="Кого_привел" ColumnName="Кого привел" />
+          <ScalarProperty Name="Выбыл_из_школы" ColumnName="Выбыл из школы" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+          <ScalarProperty Name="Школы" ColumnName="Школы" />
+          <ScalarProperty Name="Примечание" ColumnName="Примечание" />
+          <ScalarProperty Name="Участие_в_выступлениях" ColumnName="Участие в выступлениях" />
+          <ScalarProperty Name="Хобби" ColumnName="Хобби" />
+          <ScalarProperty Name="От_куда_узнал_а_" ColumnName="От куда узнал(а)" />
+          <ScalarProperty Name="Вконтекте" ColumnName="Вконтекте" />
+          <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+          <ScalarProperty Name="SMS" ColumnName="SMS" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Район" ColumnName="Район" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Дата_регистрации" ColumnName="Дата регистрации" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Список_дат">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Список_дат">
+        <MappingFragment StoreEntitySet="Список дат">
+          <ScalarProperty Name="Год" ColumnName="Год" />
+          <ScalarProperty Name="Месяц" ColumnName="Месяц" />
+          <ScalarProperty Name="Дата" ColumnName="Дата" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Список_лет">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Список_лет">
+        <MappingFragment StoreEntitySet="Список лет">
+          <ScalarProperty Name="Год" ColumnName="Год" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Список_месяцев">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Список_месяцев">
+        <MappingFragment StoreEntitySet="Список месяцев">
+          <ScalarProperty Name="Месяц" ColumnName="Месяц" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="СписокНаМероприятие">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.СписокНаМероприятие">
+        <MappingFragment StoreEntitySet="СписокНаМероприятие">
+          <ScalarProperty Name="LiginRecId" ColumnName="LiginRecId" />
+          <ScalarProperty Name="DataTimeCreate" ColumnName="DataTimeCreate" />
+          <ScalarProperty Name="Ok" ColumnName="Ok" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Pay" ColumnName="Pay" />
+          <ScalarProperty Name="Avto" ColumnName="Avto" />
+          <ScalarProperty Name="МероприятеID" ColumnName="МероприятеID" />
+          <ScalarProperty Name="PeopleId" ColumnName="PeopleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ТБ_Домики">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.ТБ_Домики">
+        <MappingFragment StoreEntitySet="ТБ Домики">
+          <ScalarProperty Name="Организация" ColumnName="Организация" />
+          <ScalarProperty Name="Кол_во_мест" ColumnName="Кол-во мест" />
+          <ScalarProperty Name="Название_организации" ColumnName="Название организации" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Цены">
+      <EntityTypeMapping TypeName="Cuatro_Caminos_BDModel.Цены">
+        <MappingFragment StoreEntitySet="Цены">
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+          <ScalarProperty Name="C__домика" ColumnName="№ домика" />
+          <ScalarProperty Name="Название_организации" ColumnName="Название организации" />
+          <ScalarProperty Name="Код" ColumnName="Код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

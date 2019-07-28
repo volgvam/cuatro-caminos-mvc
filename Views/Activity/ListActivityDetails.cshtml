@@ -1,0 +1,180 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model IEnumerable<CuatroCaminosMvcApplication.Models.СписокНаМероприятие>
+
+
+@{
+    bool close = ViewBag.CloseActivity;
+    DataManager dataManager = new DataManager();
+}
+
+@if (Model.Count() != 0)
+{
+    
+<table>
+    <tr>
+        <th>
+            Дата записи
+        </th>
+
+        <th>
+            ФИО
+        </th>
+        <th>
+            Оплата, руб.
+        </th>
+
+
+@*        <th>
+            Мероприятие
+        </th>
+*@
+        <th>
+            Комментарий
+        </th>
+        <th>
+            На авто?
+        </th>
+
+        <th>
+            Ok
+        </th>
+        @*        <th>
+            Кто записал
+        </th>
+*@
+        <th>
+            Присутствует в группах
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataTimeCreate)
+        </td>
+
+        <td nowrap="nowrap">
+            @Html.ActionLink(item.Списки_людей.ФИ, "Details", "People", new { id = item.PeopleId }, null)
+
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay)
+        </td>
+
+
+@*        <td>
+            @Html.DisplayFor(modelItem => item.Название_мероприятий.Мероприятие)
+        </td>
+*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td nowrap="nowrap">
+            @Html.DisplayFor(modelItem => item.Avto)
+            
+            @{
+                if(item.Списки_людей.Наличие_авто==true)
+                {
+                  @: (есть авто)  
+                }
+            }
+
+            
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Ok)
+        </td>
+        <td>
+            
+@foreach (string group in dataManager.GetНазваниеТанцевFromIdPeople(item.PeopleId))
+{
+    @Html.Encode(String.Format("{0}, ",group)) 
+}
+            
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.LiginRecId)
+        </td>
+*@        <td>
+@*            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+        @Html.ActionLink("Delete", "DeleteActivityDetails", new {id = item.МероприятеID, idActivity = item.Id })
+
+*@            
+
+@if (!close)
+{
+
+
+           @Ajax.ActionLink(
+                "Delete",
+            "DeleteActivityDetails",
+            "Activity",
+
+            new { id = item.МероприятеID, idActivity = item.Id },
+                     new AjaxOptions
+                     {
+                         Confirm = "Вы уверены, что хотите удалить эту запись?",
+                         HttpMethod = "post",
+                         UpdateTargetId = "target"
+
+                     }
+
+                )
+
+}
+else
+{
+    @Html.Label("Delete")
+}
+
+        </td>
+    </tr>
+}
+
+</table>
+   
+ <br/>
+@: Всего @Html.Label(Model.Count().ToString()) записей, в числе которых:
+<ul>
+    <li>@Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Код != 151).Distinct().Count().ToString()) человек(а): 
+        @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Пол == "Ж").Distinct().Count().ToString()) девушек(и) 
+      и @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Пол == "М").Distinct().Count().ToString()) парней(я) 
+    </li>
+</ul>
+
+
+<ins>По автомобилям:</ins>
+    <ul>
+        <li> @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Avto }).Where(e => e.Avto == true).Distinct().Count().ToString()) человек(а) поедут на личном автомобиле</li>
+        <li> @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Наличие_авто }).Where(e => e.Код != 151 && e.Наличие_авто == true).Distinct().Count().ToString()) человек(а) имеют личный автомобиль</li>
+    </ul>
+
+    
+<strong>Общая сумма: @Html.Label(Model.Select(e => e.Pay).Sum().ToString()) рублей.</strong>
+   
+}
+else
+{
+    
+    <ul>
+        <h5>Записей нет</h5>
+    </ul>
+}
+
+
+@* 
+    Обнуление полей ФИО после записи
+*@
+<script type="text/javascript">
+    $(function () {
+        $(".peopleid").val("");
+        $("#birds").val("");
+    });
+</script>

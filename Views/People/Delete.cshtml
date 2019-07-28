@@ -1,0 +1,126 @@
+﻿@using CuatroCaminosMvcApplication
+@model CuatroCaminosMvcApplication.Models.Списки_людей
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Вы действительно хотите удалить эту запись?</h3>
+
+<div style="color: red">удалится все, включая оплату</div>
+<br/>
+
+    <table>
+        <tr>
+            <th>
+                Дата регистрации <hr/>
+                Дата рождения
+            </th>
+            <th>
+                Фамилия<br/>
+                Имя<br/>
+                Отчество<br/>
+            
+            </th>
+            <th nowrap="nowrap">
+                Вконтекте:       <br/>
+                Выступления:     <br/>
+                Наличие авто:    <br/>
+            </th>
+            <th>
+                От куда узнал
+            </th>
+            <th>
+                Хобби
+            </th>
+            <th>
+                Примечание
+            </th>
+            <th>
+                Выбыл из школы
+            </th>
+        </tr>
+
+        <tr>
+            <td>    
+                @Html.DisplayFor(model => model.Дата_регистрации) <hr/>
+                @Html.DisplayFor(model => model.Дата_рождения)
+            </td>
+            <td>
+                <b> @Html.DisplayFor(model => model.Фамилия)     <br/>
+                    @Html.DisplayFor(model => model.Имя)
+                </b>                                                 <br/>
+                @Html.DisplayFor(model => model.Отчество)     <br/>  
+
+           
+                <br/>
+                Телефон: 
+                        
+               
+                @if (!String.IsNullOrEmpty(Model.Телефон))
+                {
+
+
+                    if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора ||
+                        HttpContext.Current.User.Identity.Name == "9608735873" ||
+                        HttpContext.Current.User.Identity.Name == "zlata")
+                    {
+
+                        @:+7 @Html.DisplayFor(model => model.Телефон)
+
+                    }
+                    else
+                    {
+                        @: номер скрыт
+                    }
+
+                }
+                else
+                {
+                    @: нет номера
+                }
+
+                <br/>
+                <br/>                                                             
+
+
+                Район: @Html.DisplayFor(model => model.Название_района.Название_района1) <br/>
+                <br/>
+                e-mail: @Html.DisplayFor(model => model.e_mail)              <br/>
+                sms:    @Html.DisplayFor(model => model.Название_SMS.SMS)    <br/>
+                <br/>
+                Школа:  @Html.DisplayFor(model => model.Название_школ.Школы)
+                <br/>
+                        
+            </td>
+            <td>
+                Вконтекте: @Html.DisplayFor(model => model.Вконтекте)               <br/>
+                Выступл-я: @Html.DisplayFor(model => model.Участие_в_выступлениях)  <br/>
+                Авто: @Html.DisplayFor(model => model.Наличие_авто)            <br/>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.От_куда_узнал_а_)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Хобби)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Примечание)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Выбыл_из_школы)<br/>
+                @Html.DisplayFor(model => model.Дата_выбытия)
+            </td>
+        </tr>
+
+    </table>
+
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,57 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model IEnumerable<List_IdAndName>
+
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<table>
+    <tr>
+        <th>ФИО</th>
+
+        <th>Был</th>
+        <th>Пред-ил</th>
+        <th>Небыл</th>
+        <th>Комментарий</th>
+
+        
+        <th></th>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+{
+    
+    
+        @Html.Hidden("People", item.Id)
+        
+    <tr>
+        <td>@Html.DisplayFor(items => item.Names)
+        @Html.ValidationMessage("Names")
+        </td>
+
+        <td>@Html.RadioButton("Radio" + item.Id.ToString(), (int)VisitFreezing.v)</td>
+        <td>@Html.RadioButton("Radio" + item.Id.ToString(), (int)VisitFreezing.Б) </td>
+        <td>@Html.RadioButton("Radio" + item.Id.ToString(), (int)VisitFreezing.Null, true) </td>    
+
+        <td>@Html.TextArea("Coomment"+item.Id.ToString()) </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+<input type="submit" value="Ок"/>
+
+}

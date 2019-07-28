@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://97.74.214.128" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="False" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="godaddy.com" publishMethod="FTP" replaceMatchingFiles="True" userName="dain8650" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/45mIIe680KAMo9c6FkIEgAAAAACAAAAAAAQZgAAAAEAACAAAAASxkn2+IUlx8hz/aUW62tJtESlW4WLBhAKK+82xHHcnQAAAAAOgAAAAAIAACAAAACi9XC+Tn0fMPEwia3L6EYKSE8c1EzOzDw5tB7bOFjPHiAAAAA+Xc0uNzV9u9vDIiml17j4cO8wN5dEIW91HWPYWshgh0AAAAAHRyKR95aIRgMhqjLLWMziOq/iX6aDiLDLWPD5ZPE8GUY+iQhFxbNz6oaLUVomyF7F9bMtpvjmWMZsQii61WUs" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="01/06/2012 17:26:16" />
+    <file relUrl="bin/System.Web.WebPages.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="bin/EntityFramework.dll" publishTime="12/11/2011 14:51:59" />
+    <file relUrl="bin/ru/System.Web.WebPages.resources.dll" publishTime="01/10/2011 11:11:30" />
+    <file relUrl="packages.config" publishTime="12/11/2011 14:52:03" />
+    <file relUrl="bin/System.Web.Helpers.xml" publishTime="12/06/2010 11:15:26" />
+    <file relUrl="bin/System.Web.WebPages.xml" publishTime="12/06/2010 11:15:26" />
+    <file relUrl="bin/System.Web.Helpers.dll" publishTime="01/05/2011 15:45:38" />
+    <file relUrl="bin/EntityFramework.xml" publishTime="12/11/2011 14:51:59" />
+    <file relUrl="bin/System.Web.Routing.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/System.Web.Abstractions.dll" publishTime="03/18/2010 19:31:26" />
+    <file relUrl="bin/ru/System.Web.Helpers.resources.dll" publishTime="01/10/2011 11:11:10" />
+    <file relUrl="bin/System.Web.Mvc.dll" publishTime="01/05/2011 17:42:16" />
+    <file relUrl="bin/ru/System.Web.Mvc.resources.dll" publishTime="01/12/2011 18:24:26" />
+    <file relUrl="Global.asax" publishTime="11/27/2011 00:00:20" />
+    <file relUrl="bin/CuatroCaminosMvcApplication.pdb" publishTime="01/06/2012 17:25:32" />
+    <file relUrl="bin/CuatroCaminosMvcApplication.dll" publishTime="01/06/2012 17:25:32" />
+    <file relUrl="bin/System.Web.Mvc.xml" publishTime="02/09/2011 11:26:24" />
+  </publishProfile>
+</publishData>

@@ -1,0 +1,84 @@
+﻿@using CuatroCaminosMvcApplication.Models
+@model CuatroCaminosMvcApplication.Models.Оплата
+           
+
+@{
+    ViewBag.Title = "Детали оплаты";
+}
+
+<h2>Детали оплаты</h2>
+
+<fieldset>
+    <legend>Оплата</legend>
+
+    <div class="display-label">Дата оплаты</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Дата_оплаты)
+    </div>
+
+    <div class="display-label">ФИО</div>
+    <div class="display-field">
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Фамилия) 
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Имя) 
+       @Html.DisplayFor(modelItem => Model.Списки_людей.Отчество)
+    </div>
+
+@*    <div class="display-label">Месяц</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Месяц)
+    </div>
+*@
+    <div class="display-label">Сумма, руб.</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Сумма)
+    </div>
+
+    <div class="display-label">Примечание</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Примечание)
+    </div>
+
+    <div class="display-label">Преподаватель</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Имена_преподавателей.ФИО)
+    </div>
+
+    <div class="display-label">Название группы</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Названия_танцев.Название_танца) 
+     =   
+        @Html.DisplayFor(model => model.Названия_танцев.Description) 
+     =
+    </div>
+
+<br/>
+<hr/>
+
+    <div class="display-label">Время внесения записи</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTimeRec)
+    </div>
+
+    <div class="display-label">Кто записал оплату</div>
+    <div class="display-field">
+        @ViewBag.LoginRecFio
+    </div>
+
+
+</fieldset>
+
+<p>
+
+    @Html.ActionLink("Назад к списку оплаты", "Index") | 
+
+
+        @if (Model.Списки_людей.Код != 151)
+        {
+           @Html.ActionLink("Карточка клиента", "Details", "People", new {id = Model.Код_Ученика}, null) @:|
+        }
+        
+    @Html.ActionLink("Редактировать оплату", "Edit", new { id = Model.Код }) |
+    @Html.ActionLink("Удалить оплату", "Delete", new { id = Model.Код}) |
+
+
+</p>

@@ -1,0 +1,4 @@
+﻿@{
+    SelectList selectList = ViewBag.selectList ?? new SelectList("");
+}
+@Html.DropDownList("", selectList, "")

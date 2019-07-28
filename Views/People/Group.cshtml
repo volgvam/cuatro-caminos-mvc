@@ -1,0 +1,55 @@
+﻿@using CuatroCaminosMvcApplication
+@using CuatroCaminosMvcApplication.Models
+@model ICollection<CuatroCaminosMvcApplication.Models.Списки_людей>
+
+@{
+    ViewBag.Title = "Список людей по группам: " + ViewBag.Имя_группы;
+   
+}
+
+<h2>Список людей группы: "@ViewBag.Имя_группы"
+    
+    @if(@ViewBag.Description!=null) {
+        <text>(@ViewBag.Description)</text>
+    }
+
+</h2> 
+
+            @Html.ActionLink("Назад к списку", "Index")  |
+            
+            @if (ViewBag.Имя_группы!= null){
+
+            @Html.ActionLink("Посмотреть оплату за текущий месяц", "Month", "Payment", new { month = DateTime.Now.Month, gruppa = Request.QueryString["Group"]},  new { style = "color: red" }) @:|
+            }
+            
+<p>
+@{
+    foreach (var название_танцев in ViewBag.Название_танцев as IList<Названия_танцев>)
+    {
+            @Html.ActionLink(название_танцев.Название_танца, "Group", new { Group = название_танцев.Код, Sex = Request.QueryString["Sex"], Pay = Request.QueryString["Pay"] }) @:|  
+          
+ 
+    }
+}
+</p>
+
+@if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+{
+
+        <p>
+        ..... Экспорт телефонов "по оплате": 
+                    @Html.ActionLink("Экспорт", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = Request.QueryString["Sex"], Pay = 1 }) |         
+                    @Html.ActionLink("М", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = 'М', Pay = 1 }) |         
+                    @Html.ActionLink("Ж", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = 'Ж', Pay = 1 }) |
+
+              
+         ..... Экспорт телефонов НЕ "по оплате" (кроме выбывших):
+
+                    @Html.ActionLink("Экспорт", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = Request.QueryString["Sex"] }) |         
+                    @Html.ActionLink("М", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = 'М' }) |         
+                    @Html.ActionLink("Ж", "DownloadCSV", new { Group = Request.QueryString["Group"], Sex = 'Ж' }) |
+
+        </p>
+}
+
+@Html.Partial("_PartialIndex")

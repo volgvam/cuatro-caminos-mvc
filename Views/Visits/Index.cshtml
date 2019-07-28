@@ -1,0 +1,31 @@
+﻿@using CuatroCaminosMvcApplication.MyHtmlHelpers
+@model CuatroCaminosMvcApplication.Models.Visits
+
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>@ViewBag.Имя_группы</h2>
+
+
+@Html.ListGroup("Group")
+
+@*
+            @Html.Partial("ListGroup", ViewData["Название_танцев"])
+*@
+
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataTimePay)
+        </div>
+        
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataTimePay)
+            @Html.ValidationMessageFor(model => model.DataTimePay)
+        </div>
+        
+
+@Html.Action("List")

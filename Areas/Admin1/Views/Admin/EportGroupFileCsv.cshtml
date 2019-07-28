@@ -1,0 +1,30 @@
+﻿@model ICollection<CuatroCaminosMvcApplication.Models.Оплата>
+
+@{
+    ViewBag.Title = "EportGroupFileCsv";
+}
+
+<h2>EportGroupFileCsv</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+ 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Названия_танцев.Код)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Названия_танцев.Название_танца)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Код }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Код }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Код })
+        </td>
+    </tr>
+}
+
+</table>

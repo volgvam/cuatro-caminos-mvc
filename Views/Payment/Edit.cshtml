@@ -1,0 +1,141 @@
+﻿
+@using CuatroCaminosMvcApplication
+@using CuatroCaminosMvcApplication.Models
+@model CuatroCaminosMvcApplication.Models.Оплата
+
+@{
+    ViewBag.Title = "Редактирование оплаты";
+    DateTime dateTime = DateTime.Now;
+}
+
+
+<h2>Редактирование оплаты</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Оплата</legend>
+
+        @Html.HiddenFor(model => model.Код)
+
+  
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Дата_оплаты)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Дата_оплаты)
+            @Html.ValidationMessageFor(model => model.Дата_оплаты)
+
+        </div>
+
+
+@{
+    ViewBag.Fio = Model.Списки_людей.ФИО;
+    ViewBag.IdPeople = Model.Списки_людей.Код;
+}
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Код_Ученика)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Код_Ученика)
+            
+            @Html.ValidationMessageFor(model => model.Код_Ученика)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Сумма)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Сумма)
+            @Html.ValidationMessageFor(model => model.Сумма)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Примечание)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Примечание)
+            @Html.ValidationMessageFor(model => model.Примечание)
+        </div>
+
+ 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Преподаватель)
+        </div>
+        <div class="editor-field">
+            @{ViewBag.selectList = ViewBag._Преподаватель;}
+            @Html.EditorFor(model => model.Преподаватель)
+            @Html.ValidationMessageFor(model => model.Преподаватель)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Название_танца)
+        </div>
+        <div class="editor-field">
+            @{ViewBag.selectList = ViewBag._Название_танца;}
+
+            @Html.EditorFor(model => model.Название_танца)
+            @Html.ValidationMessageFor(model => model.Название_танца)
+        </div>
+
+        <p>
+            
+       
+
+            @{
+    dateTime = Model.DateTimeRec?? DateTime.Now.AddDays(111);
+}
+
+
+        @if (dateTime.Date == DateTime.Now.Date || HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+        {
+            <input type="submit" value="Изменить" />
+        }else
+        {
+            <ul>
+                <h5>Вы не можете редактировать оплату "задним числом"</h5>
+            </ul>
+        } 
+        </p>
+
+        <p>
+            
+               <br/>
+    <hr/>
+
+    <div class="display-label">Время внесения записи</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateTimeRec)
+    </div>
+
+    <div class="display-label">Кто записал оплату</div>
+    <div class="display-field">
+        @ViewBag.LoginRecFio
+    </div>
+   <br/>
+    <hr/>
+
+
+        </p>
+
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Назад к списку", "Index") |
+    @Html.ActionLink("Детали", "Details", new { id = Model.Код }) |
+    @Html.ActionLink("Удалить оплату", "Delete", new { id = Model.Код}) |
+    
+
+</div>
+
+

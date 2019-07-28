@@ -1,0 +1,171 @@
+﻿
+@using CuatroCaminosMvcApplication
+@model IEnumerable<CuatroCaminosMvcApplication.Models.Списки_людей>
+
+@{
+    int toDayYear = DateTime.Now.Year;
+}
+
+@if (Model.Count() != 0)
+{
+
+    string color = "black";    
+    
+    
+<table>
+    <tr>
+        <th>
+            Дата регистрации <hr/>
+            Дата рождения
+        </th>
+        <th>
+            Фамилия<br/>
+            Имя<br/>
+            Отчество<br/>
+            
+        </th>
+        <th>
+            Школа
+        </th>
+        <th nowrap="nowrap">
+            Вконтекте,       <br/>
+            Выступоения,     <br/>
+            Наличие авто.    <br/>
+        </th>
+        <th>
+            От куда узнал
+        </th>
+        <th>
+            Хобби
+        </th>
+        <th>
+            Примечание
+        </th>
+         <th>
+            Выбыл из школы
+        </th>
+        <th></th>
+    </tr>
+
+
+
+@foreach (var item in Model)
+{
+    <tr 
+        @{
+            if (item.Выбыл_из_школы == true || item.Название_SMS.Код == 7)
+            {
+                @: style = "background-color: whitesmoke"
+            }
+        }
+    >
+        <td style="font-size: .85em">
+           
+            <br/>
+
+            @Html.DisplayFor(modelItem => item.Дата_регистрации) 
+        
+           
+            <hr/>
+            @Html.DisplayFor(modelItem => item.Дата_рождения)
+
+            @{
+                int birtDay = item.Дата_рождения == null ? 0 : toDayYear -  item.Дата_рождения.Value.Year;
+            }
+                
+            @if(birtDay!=0)
+            { 
+                @:(@birtDay)
+            }
+
+           
+        </td>
+
+    <td>
+            @if (item.Телефон == null)
+            {
+                <span style="color: red">
+
+                      <b> @Html.DisplayFor(modelItem => item.Фамилия)     <br/>
+                          @Html.DisplayFor(modelItem => item.Имя)
+                      </b>                                                 <br/>
+                          @Html.DisplayFor(modelItem => item.Отчество)     <br/>  
+                                    <br/>
+                </span>
+            }
+            else
+            {
+                if (item.Пол == "М")
+                {
+                                <span style="color: #6600FF">
+                                  <b> @Html.DisplayFor(modelItem => item.Фамилия)     <br/>
+                                      @Html.DisplayFor(modelItem => item.Имя)
+                                  </b>                                                 <br/>
+                                      @Html.DisplayFor(modelItem => item.Отчество)     <br/>  
+                                                <br/>
+                                </span>
+                }
+                else
+                {
+                                    <b> @Html.DisplayFor(modelItem => item.Фамилия)     <br/>
+                                        @Html.DisplayFor(modelItem => item.Имя)
+                                    </b>                                                 <br/>
+                                        @Html.DisplayFor(modelItem => item.Отчество)     <br/>  
+                                                <br/>
+
+                }
+            }
+
+            
+ 
+    </td>
+    
+                        
+        <td>
+              @Html.DisplayFor(modelItem => item.Название_школ.Школы)
+        </td>
+        <td>
+           Вконтекте: @Html.DisplayFor(modelItem => item.Вконтекте)               <br/>
+           Выступл-я: @Html.DisplayFor(modelItem => item.Участие_в_выступлениях)  <br/>
+           Авто: @Html.DisplayFor(modelItem => item.Наличие_авто)            <br/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.От_куда_узнал_а_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Хобби)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Примечание)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Выбыл_из_школы)<br/>
+            @Html.DisplayFor(modelItem => item.Дата_выбытия)
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.Код }) <br/><br/>
+@if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+{
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.Код }) <br/>
+}
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+Всего: @Html.Label(ViewData.Model.Select(e => new { e.Код, e.Пол }).Where(e => e.Код != 151).Distinct().Count().ToString()) человек(а), в числе которых:
+
+<ul>
+
+<li> @Html.Label(ViewData.Model.Select(e => new { e.Код, e.Пол }).Where(e => e.Пол == "Ж").Distinct().Count().ToString()) девушек(и), из них выбывших: @Html.Label(ViewData.Model.Select(e => new { e.Код, e.Пол, e.Выбыл_из_школы }).Where(e => e.Пол == "Ж" && e.Выбыл_из_школы == true ).Distinct().Count().ToString()) </li>
+<li> @Html.Label(ViewData.Model.Select(e => new { e.Код, e.Пол }).Where(e => e.Пол == "М").Distinct().Count().ToString()) парней(я), из них выбывших:  @Html.Label(ViewData.Model.Select(e => new { e.Код, e.Пол, e.Выбыл_из_школы }).Where(e => e.Пол == "М" && e.Выбыл_из_школы == true).Distinct().Count().ToString())</li>
+
+</ul>
+
+</p>
+    
+    @Html.Partial("_PartialPeopleColor")
+
+}

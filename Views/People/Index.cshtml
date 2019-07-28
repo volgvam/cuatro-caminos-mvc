@@ -1,0 +1,67 @@
+﻿@using CuatroCaminosMvcApplication
+
+@{
+    ViewBag.Title = "Список людей";
+
+    IEnumerable<string> alfavits = ViewBag.Alfavit;
+
+}
+
+<h2>Списки людей</h2>
+
+@ViewBag._Message
+
+<p>
+    @Html.ActionLink("Создание карточки клиента", "Create") | 
+    @Html.ActionLink("Список по группам", "Group")  |
+    
+    @Html.ActionLink("Переставшие ходить", "DoNotGo", null, new { style = "color: red" }) |
+
+
+    @Html.ActionLink("Люди \"Без телефонов\"", "Notphones")  |
+    @Html.ActionLink("Печать \"Анкета участника школы\"", null, Url.Content("./Content/Downloads/anketa.pdf"),null, new { target = "blank"}
+
+)  |
+
+@if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+{
+
+            @Html.ActionLink("Другие школы", "Schools", new { schools = -1 })  @: | 
+            @Html.ActionLink("Заметки", "NotesListAdmin") @: | 
+
+    <br/>
+}
+
+
+</p>
+
+
+Поиск по фамилии: 
+
+    @foreach (string alfavit in alfavits)
+    {
+        if (!String.IsNullOrEmpty(alfavit))
+        {
+            @Html.ActionLink(alfavit, "Index", new { alfavit = alfavit }) @:|         
+        }
+
+    }
+
+            @Html.ActionLink("ВСЕ", "Index", new { alfavit = "0" }) |         
+
+
+    <br/>
+    <br/>
+    
+    
+@Html.Action("PartialSearchPeople")
+
+    <br/>
+
+@Html.Partial("_PartialIndex")
+
+
+
+<p>
+    @Html.ActionLink("Создание карточки клиента", "Create") | 
+</p>

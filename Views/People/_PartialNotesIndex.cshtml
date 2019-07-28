@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CuatroCaminosMvcApplication.Models.Notes>
+
+@if(Model.Any()){
+<table>
+    <tr>
+        <th>
+            Дата
+        </th>
+        <th>
+            Имя
+        </th>
+        <th>
+            Текст заметки
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatePlan)
+        </td>
+        <td>
+            @Html.ActionLink(item.Списки_людей.ФИ, "Details", "People", new { id = item.КодУченика }, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+    </tr>
+}
+
+</table>
+}

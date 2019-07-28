@@ -1,0 +1,175 @@
+﻿@using System.Collections
+@using System.Web.Services.Description
+@using CuatroCaminosMvcApplication.Models
+@using CuatroCaminosMvcApplication;
+@model IEnumerable<CuatroCaminosMvcApplication.Models.Оплата>
+
+
+
+@{
+    DataManager dm = new DataManager();
+    string poisk = "биглион";
+    string fio;
+    IList<IdIntStringModel> biglion1 = new List<IdIntStringModel>();
+    IDictionary<int, string> biglion = new Dictionary<int, string>();
+//    IList<List_IdAndName> listIdAndName;
+  }
+
+@if (Model.Count() != 0)
+{
+
+<table>
+    <tr>
+        <th>
+            Дата оплаты
+        </th>
+        <th>
+            ФИО
+        </th>
+        <th>
+            Сумма
+        </th>
+        <th>
+            Примечание
+        </th>
+        <th>
+            Преподаватель
+        </th>
+        <th>
+            Группа
+        </th>
+        <th>
+        </th>
+    </tr>
+
+
+
+    @foreach (Оплата item in Model)
+    {
+
+ 
+        <tr>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Дата_оплаты)
+            </td>
+            <td nowrap="nowrap">
+            
+
+
+
+            @if (item.Списки_людей.Телефон == null)
+            {
+                <span style="color: red">
+
+                    @Html.DisplayFor(modelItem => item.Списки_людей.Фамилия) 
+                    
+                    @Html.DisplayFor(modelItem => item.Списки_людей.Имя)
+                </span>
+            }
+            else
+            {
+                if (item.Списки_людей.Пол == "М")
+                {
+                                <span style="color: #6600FF">
+                                    @Html.DisplayFor(modelItem => item.Списки_людей.Фамилия) 
+                    
+                                    @Html.DisplayFor(modelItem => item.Списки_людей.Имя)
+                                </span>
+                }
+                else
+                {
+                                @Html.DisplayFor(modelItem => item.Списки_людей.Фамилия) 
+                                @:         
+                                @Html.DisplayFor(modelItem => item.Списки_людей.Имя)
+
+                }
+            }
+
+
+
+
+                <br/>
+            </td>
+
+            <td class="many"  nowrap="nowrap">
+                @Html.DisplayFor(modelItem => item.Сумма)                       
+
+            </td>
+            <td>
+            @{
+            string откдаУзнал = item.Списки_людей.От_куда_узнал_а_ ?? "";
+
+
+
+            if (dm.FindString(откдаУзнал.ToLower(), poisk))
+                    {
+//                        if (item.Примечание != poisk){
+                            @:(@Html.Encode(poisk))
+//                            }
+
+                        fio = item.Списки_людей.Фамилия + item.Списки_людей.Имя + item.Списки_людей.Отчество;
+
+                        biglion1.Add(new IdIntStringModel() { Id = item.Код, Fio = fio, Payment = item.Сумма });
+                        
+                        biglion.Add(item.Код, fio);
+                    }
+            }
+                                 
+                @Html.DisplayFor(modelItem => item.Примечание)
+            </td>
+            <td nowrap="nowrap">
+                @Html.DisplayFor(modelItem => item.Имена_преподавателей.ФИО)
+            </td>
+            <td nowrap="nowrap">
+                @Html.ActionLink(item.Названия_танцев.Название_танца, "Group", "People", new{Group=item.Названия_танцев.Код}, null)
+               
+            </td>
+            <td nowrap="nowrap">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Код }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Код }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Код })
+            </td>
+        </tr>
+    }
+</table>
+<br/>
+@: Всего @Html.Label(ViewData.Model.Count().ToString()) записей, в числе которых:
+<ul>
+
+<li> @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Код != 151).Distinct().Count().ToString()) человек(а) </li>
+<li> @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Пол == "Ж").Distinct().Count().ToString()) девушек(и) </li>
+<li> @Html.Label(ViewData.Model.Select(e => new { e.Списки_людей.Код, e.Списки_людей.Пол }).Where(e => e.Пол == "М").Distinct().Count().ToString()) парней(я) </li>
+<li> @Html.Label(@biglion1.Count().ToString()) @String.Format(" записей по {0}у", poisk) на сумму: @biglion1.Sum(e=>e.Payment) руб. (@Html.Label(@biglion1.Select(e=>e.Fio).Distinct().Count().ToString()) чел.)</li>
+</ul>
+
+
+    if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора ||
+        HttpContext.Current.User.Identity.Name == "9608735873" ||
+        HttpContext.Current.User.Identity.Name == "zlata")
+    {
+
+
+        <strong> Общая сумма: @Html.Label(Model.Sum(e => e.Сумма).ToString()) руб.</strong>
+    }
+
+}
+else
+{
+    <ul>
+         <h5> Нет данных по оплате</h5>
+    </ul>
+}
+
+
+
+
+@* 
+    Обнуление полей ФИО после записи
+*@
+<script type="text/javascript">
+    $(function () {
+        $(".peopleid").val("");
+        $("#birds").val("");
+    });
+</script>

@@ -1,0 +1,48 @@
+﻿@using CuatroCaminosMvcApplication
+@using CuatroCaminosMvcApplication.Models
+
+
+           
+@{
+
+    ViewBag.Title = "Отчет по оплате";
+}
+<h2>Отчет по оплате</h2>
+<p>
+    
+
+
+    @using(@Html.BeginForm()){
+    
+        @Html.DropDownList("month", "Все месяца");
+        @: | 
+        @Html.DropDownList("Название_танца", "Все группы");
+@*
+        @: | 
+
+        @Html.DropDownList("Код_Ученика", "Все ученики");
+*@
+        if (HttpContext.Current.User.Identity.Name == StaticsVariables.ЛогинАдминистратора)
+        {
+      
+            @: | 
+
+            @Html.DropDownList("Преподаватель", "Все преподаватели");
+        }
+
+        <input type="submit" value="Фильтр"/>
+
+
+    }
+    <br/>
+    @Html.ActionLink("Внести новую оплату", "Create") | 
+    @Html.ActionLink("Развернутый отчет", "Month", new { month = FromFormData.month, gruppa = FromFormData.Название_танца }, null) |
+    @Html.ActionLink("Список оплаты", "Index", "Export", new { month = FromFormData.month, gruppa = FromFormData.Название_танца }, null) |
+    @Html.ActionLink("Суммы по группам", "GroupSummary", new { month = FromFormData.month },  new { style = "color: red" })
+
+
+
+</p>
+
+@Html.Partial("_PartialОплата")
+@Html.Partial("_PartialPeopleColor")

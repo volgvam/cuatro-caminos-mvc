@@ -1,0 +1,90 @@
+﻿@model IEnumerable<CuatroCaminosMvcApplication.Models.СписокНаМероприятие>
+
+
+@if(Model.Count()!=0)
+{
+    
+<table>
+    <tr>
+        <th>
+            Дата
+        </th>
+        <th>
+            Мероприятие
+        </th>
+
+        <th>
+            ФИО
+        </th>
+        <th>
+            Оплата, руб.
+        </th>
+
+
+
+        <th>
+            Комментарий
+        </th>
+        <th>
+            На авто?
+        </th>
+
+        <th>
+            Ok
+        </th>
+@*        <th>
+            Кто записал
+        </th>
+*@        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Название_мероприятий.Date)
+        </td>
+        <td>
+            @Html.ActionLink(item.Название_мероприятий.Мероприятие, "Details", "Activity", new { id = item.МероприятеID }, null)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Списки_людей.ФИ)
+@*            @Html.ActionLink(item.Списки_людей.ФИ, "Details", "People", new { id = item.PeopleId }, null)
+*@
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avto)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Ok)
+        </td>
+@*        <td>
+            @Html.DisplayFor(modelItem => item.LiginRecId)
+        </td>
+*@
+
+
+
+
+    </tr>
+}
+
+</table>
+}else
+{
+    <ul>
+        <h5>Нет записей</h5>
+    </ul>
+}
+
